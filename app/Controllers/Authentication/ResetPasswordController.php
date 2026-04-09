@@ -4,18 +4,22 @@ declare(strict_types=1);
 
 namespace App\Controllers\Authentication;
 
-use App\CommandBus\Authentication\ResetPassword;
 use App\Requests\Authentication\ResetPasswordRequest;
+use App\Services\AuthService;
 use Inertia\Response;
+use Inertia\ResponseFactory;
 use Tempest\Http\Responses\Redirect;
 use Tempest\Router\Get;
 use Tempest\Router\Post;
 
-use function Tempest\CommandBus\command;
 use function Tempest\Router\uri;
 
 final readonly class ResetPasswordController
 {
+    public function __construct(
+        private AuthService $authService,
+    ) {}
+
     #[Get('/reset-password/{token}')]
     public function show(string $token): Response
     {
@@ -23,13 +27,19 @@ final readonly class ResetPasswordController
     }
 
     #[Post('/reset-password')]
-    public function store(ResetPasswordRequest $request): Redirect
+    public function store(ResetPasswordRequest $request): Response|ResponseFactory|Redirect
     {
-        command(new ResetPassword(
+        $passwordReset = $this->authService->resetPassword(
             token: $request->token,
             password: $request->password,
-        ));
+        );
 
-        return new Redirect(uri([LoginController::class, 'create']));
+        if (! $passwordReset) {
+            return inertia('Authentication/ForgotPassword', [
+                'errors' => ['email' => 'These credentials do not match our records.'],
+            ]);
+        }
+
+        return new Redirect(uri([LoginController::class, 'show']));
     }
 }

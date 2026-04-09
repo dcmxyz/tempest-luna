@@ -26,8 +26,4 @@ final class RegisterRequest implements Request
     #[TranslationKey('register_password')]
     #[IsPassword(min: 12, mixedCase: true, numbers: true)]
     public string $password;
-
-    #[TranslationKey('register_password_confirmation')]
-    #[IsPassword(min: 12, mixedCase: true, numbers: true)]
-    public string $password_confirmation;
 }

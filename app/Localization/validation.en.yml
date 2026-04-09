@@ -4,7 +4,6 @@ validation_field:
     is_email.register_email: Email
     unique.register_email: email
     is_password.register_password: Password
-    is_password.register_password_confirmation: Password confirmation
     is_not_empty_string.login_email: Email
     is_not_empty_string.login_password: Password
     is_not_empty_string.forgot_password_email: Email
@@ -29,16 +28,6 @@ validation_error:
             .input {$field :string}
             This {$field} cannot be registered.
     is_password.register_password: |
-        .input {$field :string}
-        .input {$min :number}
-        .input {$mixed_case :boolean}
-        .input {$numbers :boolean}
-        .input {$letters :boolean}
-        .input {$symbols :boolean}
-        .match $mixed_case $numbers $letters $symbols
-          true true * * {{{$field} must contain at least {$min} characters, one uppercase and one lowercase letter, and one number}}
-          * * * * {{{$field} must contain at least {$min} characters}}
-    is_password.register_password_confirmation: |
         .input {$field :string}
         .input {$min :number}
         .input {$mixed_case :boolean}

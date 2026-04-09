@@ -7,18 +7,22 @@ namespace App\Session;
 use App\Models\Session as AppSession;
 use Tempest\Auth\Authentication\SessionAuthenticator;
 use Tempest\Clock\Clock;
+use Tempest\Core\AppConfig;
 use Tempest\Cryptography\Encryption\Encrypter;
 use Tempest\DateTime\FormatPattern;
+use Tempest\Http\Cookie\CookieManager;
 use Tempest\Http\Request;
 use Tempest\Http\Session\Session;
 use Tempest\Http\Session\SessionConfig;
 use Tempest\Http\Session\SessionCreated;
 use Tempest\Http\Session\SessionDeleted;
 use Tempest\Http\Session\SessionId;
+use Tempest\Http\Session\SessionIdResolver;
 use Tempest\Http\Session\SessionManager;
 
 use function Tempest\Database\query;
 use function Tempest\EventBus\event;
+use function Tempest\Support\str;
 
 /**
  * Database-backed session manager with encrypted payloads, replacing Tempest's default.
@@ -27,10 +31,13 @@ use function Tempest\EventBus\event;
 final readonly class AppSessionManager implements SessionManager
 {
     public function __construct(
+        private AppConfig $appConfig,
         private Clock $clock,
         private SessionConfig $config,
         private Request $request,
         private Encrypter $encrypter,
+        private CookieManager $cookieManager,
+        private SessionIdResolver $sessionIdResolver,
     ) {}
 
     public function getOrCreate(SessionId $id): Session
@@ -164,5 +171,24 @@ final readonly class AppSessionManager implements SessionManager
         }
 
         return $_SERVER['REMOTE_ADDR'] ?? null;
+    }
+
+    private function sessionCookieName(): string
+    {
+        return str($this->appConfig->name ?? 'tempest')
+            ->snake()
+            ->append('_session_id')
+            ->toString();
+    }
+
+    public function destroySession(): void
+    {
+        $session = $this->load($this->sessionIdResolver->resolve());
+
+        if ($session !== null) {
+            $this->delete($session);
+        }
+
+        $this->cookieManager->remove($this->sessionCookieName());
     }
 }

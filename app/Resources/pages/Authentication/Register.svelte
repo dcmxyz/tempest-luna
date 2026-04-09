@@ -8,13 +8,12 @@
         name: '',
         email: '',
         password: '',
-        password_confirmation: '',
     })
 
     function submit(e: SubmitEvent) {
         e.preventDefault()
         form.post(uri('/register'), {
-            onFinish: () => form.reset("password", "password_confirmation"),
+            onFinish: () => form.reset("password"),
         })
     }
 </script>
@@ -56,16 +55,6 @@
                         class="px-3 py-2 border border-stone-200 text-sm bg-white placeholder:text-stone-400 focus:outline-none focus:border-stone-900 transition-colors"
                     />
                     {#if form.errors.password}<p class="text-red-700 text-xs font-mono">{form.errors.password}</p>{/if}
-                </div>
-
-                <div class="flex flex-col gap-1">
-                    <input
-                        type="password"
-                        bind:value={form.password_confirmation}
-                        placeholder="Confirm password"
-                        class="px-3 py-2 border border-stone-200 text-sm bg-white placeholder:text-stone-400 focus:outline-none focus:border-stone-900 transition-colors"
-                    />
-                    {#if form.errors.password_confirmation}<p class="text-red-700 text-xs font-mono">{form.errors.password_confirmation}</p>{/if}
                 </div>
 
                 <button
