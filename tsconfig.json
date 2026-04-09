@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ESNext", "DOM"],
+    "strict": true,
+    "isolatedModules": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "baseUrl": ".",
+    "paths": {
+      "@components": ["app/Resources/pages/Components/index.ts"],
+      "@components/*": ["app/Resources/pages/Components/*"],
+      "@layouts": ["app/Resources/pages/Layouts/index.ts"],
+      "@layouts/*": ["app/Resources/pages/Layouts/*"],
+      "@pages": ["app/Resources/pages/index.ts"],
+      "@pages/*": ["app/Resources/pages/*"],
+      "@utils": ["app/Resources/js/utils.ts"],
+      "@route": ["app/Resources/js/routes/route.ts"],
+      "@t": ["app/Resources/js/Types/index.ts"],
+      "@t/*": ["app/Resources/js/Types/*"],
+      "@tempest/*": [".tempest/*"]
+    }
+  },
+  "include": [
+    "app/Resources/**/*.ts",
+    "app/Resources/**/*.svelte",
+    ".tempest/**/*.ts"
+  ]
+}

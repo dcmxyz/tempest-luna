@@ -1,0 +1,21 @@
+{
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^7.0.0",
+    "@tailwindcss/vite": "^4.2.2",
+    "@types/node": "^25.5.2",
+    "tailwindcss": "^4.2.2",
+    "vite": "^8.0.7",
+    "vite-plugin-tempest": "^2.13.0"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "dependencies": {
+    "@inertiajs/svelte": "^3.0.3",
+    "svelte": "^5.55.2",
+    "tailwind-merge": "^3.5.0",
+    "tailwind-variants": "^3.2.2"
+  }
+}

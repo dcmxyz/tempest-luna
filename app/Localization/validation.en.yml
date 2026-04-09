@@ -1,0 +1,59 @@
+validation_field:
+    unique: Email
+    has_length.register_name: Name
+    is_email.register_email: Email
+    unique.register_email: email
+    is_password.register_password: Password
+    is_password.register_password_confirmation: Password confirmation
+    is_not_empty_string.login_email: Email
+    is_not_empty_string.login_password: Password
+    is_not_empty_string.forgot_password_email: Email
+validation_error:
+    unique: |
+        .input {$field :string}
+        {$field} is already taken.
+    has_length.register_name: |
+        .input {$field :string}
+        .input {$min :number default=null}
+        .input {$max :number default=null}
+        .local $has_min = {$min :boolean}
+        .local $has_max = {$max :boolean}
+        .match $has_min $has_max
+          true true {{{$field} must be between {$min} and {$max} characters}}
+          true false {{{$field} must be at least {$min} characters}}
+          false true {{{$field} must be at most {$max} characters}}
+    is_email.register_email: |
+        .input {$field :string}
+        {$field} must be a valid email address
+    unique.register_email: |
+            .input {$field :string}
+            This {$field} cannot be registered.
+    is_password.register_password: |
+        .input {$field :string}
+        .input {$min :number}
+        .input {$mixed_case :boolean}
+        .input {$numbers :boolean}
+        .input {$letters :boolean}
+        .input {$symbols :boolean}
+        .match $mixed_case $numbers $letters $symbols
+          true true * * {{{$field} must contain at least {$min} characters, one uppercase and one lowercase letter, and one number}}
+          * * * * {{{$field} must contain at least {$min} characters}}
+    is_password.register_password_confirmation: |
+        .input {$field :string}
+        .input {$min :number}
+        .input {$mixed_case :boolean}
+        .input {$numbers :boolean}
+        .input {$letters :boolean}
+        .input {$symbols :boolean}
+        .match $mixed_case $numbers $letters $symbols
+          true true * * {{{$field} must contain at least {$min} characters, one uppercase and one lowercase letter, and one number}}
+          * * * * {{{$field} must contain at least {$min} characters}}
+    is_not_empty_string.login_email: |
+        .input {$field :string}
+        {$field} must not be empty
+    is_not_empty_string.login_password: |
+        .input {$field :string}
+        {$field} must not be empty
+    is_not_empty_string.forgot_password_email: |
+        .input {$field :string}
+        {$field} must not be empty

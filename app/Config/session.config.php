@@ -1,0 +1,10 @@
+<?php
+
+use Tempest\DateTime\Duration;
+use Tempest\Http\Session\CleanupStrategy;
+use Tempest\Http\Session\Config\DatabaseSessionConfig;
+
+return new DatabaseSessionConfig(
+    expiration: Duration::days(30),
+    cleanupStrategy: CleanupStrategy::RANDOM_REQUESTS,
+);
