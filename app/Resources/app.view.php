@@ -19,7 +19,7 @@
 
         <x-vite-tags />
     </head>
-    <body class="h-dvh w-full bg-ui-body-background text-ui-text p-4 antialiased">
+    <body class="h-dvh w-full text-ui-text p-4 antialiased">
         <x-inertia-app />
     </body>
 </html>

@@ -5,11 +5,12 @@
     import type { Uri } from '@route';
 
     const link = tv({
-        base: "text-sm transition-colors",
+        base: "text-lg leading-none py-0.5 transition-colors focus:outline-none focus:bg-ui-focus focus:text-ui-focus-text underline-offset-2 decoration-1 hover:underline-offset-4 hover:decoration-2 focus:decoration-3",
         variants: {
             variant: {
-                link: "text-stone-400 hover:text-stone-900",
-                button: "px-4 py-1.5 font-bold bg-stone-900 text-white hover:bg-stone-700",
+                link: "underline text-ui-link hover:text-ui-link-hover visited:text-ui-link-visited active:text-ui-link-active",
+                "no-visited": "underline text-ui-link hover:text-ui-link-hover active:text-ui-link-active",
+                "no-underline": "text-ui-link [text-decoration:none] hover:text-ui-link-hover visited:text-ui-link-visited active:text-ui-link-active",
             }
         },
         defaultVariants: {
@@ -21,7 +22,7 @@
 
     interface Props {
         href?: Href;
-        variant?: "button" | "link";
+        variant?: "link" | "no-visited" | "no-underline";
         inertiaProps?: Record<string, any>;
         class?: string;
         children?: Snippet;
@@ -42,7 +43,6 @@
 
 <a
     use:inertia={{ href: resolvedHref, ...inertiaProps }}
-    type="button"
     class={cm(link({ variant }), className)}
     {...rest}
 >

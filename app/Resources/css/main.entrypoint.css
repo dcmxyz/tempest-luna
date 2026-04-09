@@ -15,10 +15,17 @@
     --color-ui-link-visited: var(--color-bush-800);
     --color-ui-link-active: var(--color-cod-950);
 
+    --color-ui-button: var(--color-cod-700);
+    --color-ui-button-shade: var(--color-cod-900);
+    --color-ui-button-secondary: var(--color-cod-100);
+    --color-ui-button-secondary-shade: var(--color-cod-400);
+    --color-ui-button-danger: var(--color-flush-600);
+    --color-ui-button-danger-shade: var(--color-flush-800);
+
     --color-ui-border: var(--color-cod-300);
     --color-ui-input-border: var(--color-cod-950);
 
-    --color-ui-template-background: var(--color-prussian-50);
+    --color-ui-template-background: var(--color-cod-50);
     --color-ui-body-background: var(--color-white);
 
     --color-ui-focus: var(--color-candlelight-500);
@@ -31,9 +38,9 @@
 
     --color-ui-brand: var(--color-cod-950);
 
-    --color-ui-surface-background: var(--color-prussian-50);
+    --color-ui-surface-background: var(--color-cod-50);
     --color-ui-surface-text: var(--color-cod-950);
-    --color-ui-surface-border: var(--color-prussian-300);
+    --color-ui-surface-border: var(--color-cod-300);
 
     --color-cod-50: oklch(0.9851 0 0);
     --color-cod-100: oklch(0.9694 0.0011 197.14);
