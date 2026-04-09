@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="bg-ui-template-background">
     <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -19,7 +19,7 @@
 
         <x-vite-tags />
     </head>
-    <body class="h-dvh w-full bg-white text-stone-950 p-4 antialiased">
+    <body class="h-dvh w-full bg-ui-body-background text-ui-text p-4 antialiased">
         <x-inertia-app />
     </body>
 </html>
