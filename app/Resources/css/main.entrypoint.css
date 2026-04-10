@@ -2,6 +2,7 @@
 
 @theme {
     --font-sans: 'Atkinson Hyperlegible Next', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-serif: 'Fraunces', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 
     /**
      * Inspired by the GOV.UK Design System colour palette
@@ -10,8 +11,8 @@
     --color-ui-text: var(--color-cod-950);
     --color-ui-secondary-text: var(--color-cod-700);
 
-    --color-ui-link: var(--color-prussian-600);
-    --color-ui-link-hover: var(--color-prussian-900);
+    --color-ui-link: var(--color-cod-600);
+    --color-ui-link-hover: var(--color-cod-900);
     --color-ui-link-visited: var(--color-bush-800);
     --color-ui-link-active: var(--color-cod-950);
 
