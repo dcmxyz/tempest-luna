@@ -8,6 +8,7 @@ use App\Requests\Authentication\ForgotPasswordRequest;
 use App\Services\AuthService;
 use Inertia\Response;
 use Tempest\Http\Responses\Redirect;
+use Tempest\Http\Session\Session;
 use Tempest\Router\Get;
 use Tempest\Router\Post;
 
@@ -17,12 +18,16 @@ final readonly class ForgotPasswordController
 {
     public function __construct(
         private AuthService $authService,
+        private Session $session,
     ) {}
 
     #[Get('/forgot-password')]
     public function show(): Response
     {
-        return inertia(component: 'Authentication/ForgotPassword');
+        return inertia(
+            component: 'Authentication/ForgotPassword',
+            props: ['status' => $this->session->get('status')]
+        );
     }
 
     #[Post('/forgot-password')]
@@ -30,6 +35,11 @@ final readonly class ForgotPasswordController
     {
         $this->authService->sendPasswordResetEmail(
             email: $request->email,
+        );
+
+        $this->session->flash(
+            key: 'status',
+            value: 'If that email address is in our system, you will receive a password reset link shortly.'
         );
 
         return new Redirect(uri([self::class, 'show']));

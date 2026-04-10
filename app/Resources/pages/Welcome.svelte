@@ -19,15 +19,26 @@
     }: Props = $props();
 
     const auth = $derived(page.props.auth);
+
+    const hour = new Date().getHours();
+    const greeting = hour < 6 ? 'Good night' : hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
+
+    const firstName = $derived(auth.user?.name?.split(' ')[0]);
 </script>
 
 <App title="Welcome">
     <div class="flex-1 flex items-center justify-center">
         <div class="w-full max-w-3xl flex flex-col gap-4">
-            <header class="flex items-center justify-end px-6 py-3 border border-ui-border bg-ui-surface-background">
+            <header class="flex items-center justify-between pl-12 pr-6 py-3 border border-ui-border bg-ui-surface-background">
+                <div class="text-lg leading-none">
+                    {#if auth.user}
+                        { greeting }, { firstName }.
+                    {/if}
+                </div>
                 <nav class="flex items-center gap-x-6">
                     {#if auth.user}
-                        <Button href={ uri('/logout') } inertiaProps={{ method: 'post' }}>Logout</Button>
+                        <Link href={ uri('/logout') } inertiaProps={{ method: 'post' }} variant="no-visited">Logout</Link>
+                        <Button>Go to dashboard</Button>
                     {:else}
                         <Link href={ uri('/login') } variant="no-visited">Log in</Link>
                         <Button href={ uri('/register') } variant="primary">Create an account</Button>
@@ -56,7 +67,7 @@
                     </p>
                 </div>
 
-                <div class="w-full sm:w-80 shrink-0 fill-ui-brand flex items-center justify-center py-12 sm:py-0 min-h-48">
+                <div class="w-full sm:w-80 shrink-0 fill-ui-brand flex items-center justify-center py-12 sm:py-0 min-h-48 bg-ui-surface-background">
                     <svg viewBox="0 0 160 160" width="160" height="160" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="80" cy="80" r="72" fill="#000"/>
                     </svg>

@@ -5,7 +5,7 @@
     import type { Uri } from '@route';
 
     const button = tv({
-        base: "inline-block px-3 py-2 text-lg leading-none cursor-pointer transition-colors focus:outline-none focus:bg-ui-focus focus:text-ui-focus-text focus:shadow-ui-button-shade",
+        base: "inline-block px-3 py-2.5 text-lg leading-none cursor-pointer transition-colors focus:outline-none focus:bg-ui-focus focus:text-ui-focus-text focus:shadow-ui-button-shade",
         variants: {
             variant: {
                 primary: "text-white bg-ui-button shadow-[0_2px_0_var(--color-ui-button-shade)] hover:bg-ui-button-shade active:shadow-none active:translate-y-[2px]",
