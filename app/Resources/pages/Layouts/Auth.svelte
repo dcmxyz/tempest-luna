@@ -16,12 +16,9 @@
         children,
         ...rest
     }: Props = $props();
-
-    const inertiaProps = $derived(page.props);
 </script>
 
 <Base {title}>
-    {JSON.stringify(inertiaProps)}
     <div class="flex-1 flex items-center justify-center">
         <div class="w-full max-w-3xl flex flex-col gap-4">
             <header class="pl-12 pr-6 py-3 border border-ui-border bg-ui-surface-background">
