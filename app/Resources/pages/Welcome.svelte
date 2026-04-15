@@ -71,33 +71,20 @@
                     <svg viewBox="0 0 160 160" width="160" height="160" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle cx="80" cy="80" r="72" fill="var(--color-ui-brand)"/>
 
-                        <!-- stars -->
-                        <circle cx="38" cy="34" r="1.2" fill="var(--color-cod-50)"/>
-                        <circle cx="118" cy="28" r="0.9" fill="var(--color-candlelight-50)"/>
-                        <circle cx="130" cy="55" r="1.4" fill="var(--color-cod-50)"/>
-                        <circle cx="28" cy="68" r="0.8" fill="var(--color-candlelight-50)"/>
-                        <circle cx="50" cy="118" r="1.0" fill="var(--color-cod-50)"/>
-                        <circle cx="125" cy="110" r="1.2" fill="var(--color-candlelight-50)"/>
-                        <circle cx="110" cy="130" r="0.8" fill="var(--color-cod-50)"/>
-                        <circle cx="40" cy="95" r="1.1" fill="var(--color-candlelight-50)"/>
-                        <circle cx="70" cy="140" r="0.7" fill="var(--color-cod-50)"/>
-                        <circle cx="20" cy="45" r="0.6" fill="var(--color-cod-50)"/>
-                        <circle cx="140" cy="80" r="0.8" fill="var(--color-candlelight-50)"/>
-
                         <g transform="translate(115, 38)">
-                            <line x1="0" y1="-6" x2="0" y2="6" stroke="var(--color-candlelight-300)" stroke-width="1.2" stroke-linecap="round"/>
-                            <line x1="-6" y1="0" x2="6" y2="0" stroke="var(--color-candlelight-300)" stroke-width="1.2" stroke-linecap="round"/>
-                            <line x1="-3.5" y1="-3.5" x2="3.5" y2="3.5" stroke="var(--color-candlelight-300)" stroke-width="0.6" stroke-linecap="round"/>
-                            <line x1="3.5" y1="-3.5" x2="-3.5" y2="3.5" stroke="var(--color-candlelight-300)" stroke-width="0.6" stroke-linecap="round"/>
+                            <line x1="0" y1="-6" x2="0" y2="6" stroke="var(--color-cod-100)" stroke-width="1.2" stroke-linecap="round"/>
+                            <line x1="-6" y1="0" x2="6" y2="0" stroke="var(--color-cod-100)" stroke-width="1.2" stroke-linecap="round"/>
+                            <line x1="-3.5" y1="-3.5" x2="3.5" y2="3.5" stroke="var(--color-cod-100)" stroke-width="0.6" stroke-linecap="round"/>
+                            <line x1="3.5" y1="-3.5" x2="-3.5" y2="3.5" stroke="var(--color-cod-100)" stroke-width="0.6" stroke-linecap="round"/>
                         </g>
 
                         <g transform="translate(42, 52)">
-                            <line x1="0" y1="-3.5" x2="0" y2="3.5" stroke="var(--color-candlelight-300)" stroke-width="0.8" stroke-linecap="round"/>
-                            <line x1="-3.5" y1="0" x2="3.5" y2="0" stroke="var(--color-candlelight-300)" stroke-width="0.8" stroke-linecap="round"/>
+                            <line x1="0" y1="-3.5" x2="0" y2="3.5" stroke="var(--color-cod-100)" stroke-width="0.8" stroke-linecap="round"/>
+                            <line x1="-3.5" y1="0" x2="3.5" y2="0" stroke="var(--color-cod-100)" stroke-width="0.8" stroke-linecap="round"/>
                         </g>
 
-                        <circle cx="78" cy="72" r="34" fill="var(--color-cod-100)"/>
-                        <circle cx="90" cy="65" r="28" fill="var(--color-ui-brand)"/>
+                        <circle cx="85" cy="80" r="34" fill="var(--color-cod-100)"/>
+                        <circle cx="110" cy="75" r="32" fill="var(--color-ui-brand)"/>
                     </svg>
                 </div>
             </div>
