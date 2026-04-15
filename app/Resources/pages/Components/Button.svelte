@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { Button } from "bits-ui";
     import { inertia } from "@inertiajs/svelte";
     import { cm, tv } from "@utils";
     import type { Snippet } from "svelte";
@@ -62,7 +63,7 @@
         {@render children?.()}
     </a>
 {:else}
-    <button
+    <Button.Root
         {type}
         {disabled}
         class={cm(button({ variant, disabled }), className)}
@@ -70,5 +71,5 @@
         {...rest}
     >
         {@render children?.()}
-    </button>
+    </Button.Root>
 {/if}
