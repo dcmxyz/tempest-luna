@@ -6,6 +6,7 @@ vendor/
 /.php-cs-fixer.cache
 .env
 .idea
+.zed
 .phpunit.result.cache
 log/
 *.local.config.php
