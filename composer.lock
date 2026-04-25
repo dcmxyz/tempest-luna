@@ -465,16 +465,16 @@
         },
         {
             "name": "giggsey/libphonenumber-for-php-lite",
-            "version": "9.0.28",
+            "version": "9.0.29",
             "source": {
                 "type": "git",
                 "url": "https://github.com/giggsey/libphonenumber-for-php-lite.git",
-                "reference": "08acc9d605e1bb3d89dec504a09b6c435490f940"
+                "reference": "d64c0c05a5ff4591e6d8421a17764802e2c14733"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php-lite/zipball/08acc9d605e1bb3d89dec504a09b6c435490f940",
-                "reference": "08acc9d605e1bb3d89dec504a09b6c435490f940",
+                "url": "https://api.github.com/repos/giggsey/libphonenumber-for-php-lite/zipball/d64c0c05a5ff4591e6d8421a17764802e2c14733",
+                "reference": "d64c0c05a5ff4591e6d8421a17764802e2c14733",
                 "shasum": ""
             },
             "require": {
@@ -539,7 +539,7 @@
                 "issues": "https://github.com/giggsey/libphonenumber-for-php-lite/issues",
                 "source": "https://github.com/giggsey/libphonenumber-for-php-lite"
             },
-            "time": "2026-04-13T11:33:01+00:00"
+            "time": "2026-04-24T11:10:08+00:00"
         },
         {
             "name": "graham-campbell/result-type",
@@ -1465,12 +1465,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Maarten-Dekker/inertia-tempest.git",
-                "reference": "fd0675a9ebe13a0fd45fdfca79670248d6e1499b"
+                "reference": "659de24a5cd8f357a3247c28161293cfd4a63c67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Maarten-Dekker/inertia-tempest/zipball/fd0675a9ebe13a0fd45fdfca79670248d6e1499b",
-                "reference": "fd0675a9ebe13a0fd45fdfca79670248d6e1499b",
+                "url": "https://api.github.com/repos/Maarten-Dekker/inertia-tempest/zipball/659de24a5cd8f357a3247c28161293cfd4a63c67",
+                "reference": "659de24a5cd8f357a3247c28161293cfd4a63c67",
                 "shasum": ""
             },
             "require": {
@@ -1514,7 +1514,7 @@
                 "issues": "https://github.com/Maarten-Dekker/inertia-tempest/issues",
                 "source": "https://github.com/Maarten-Dekker/inertia-tempest/tree/4.x"
             },
-            "time": "2026-04-13T11:50:03+00:00"
+            "time": "2026-04-21T15:59:08+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1984,11 +1984,11 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.1.50",
+            "version": "2.1.51",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d452086fb4cf648c6b2d8cf3b639351f79e4f3e2",
-                "reference": "d452086fb4cf648c6b2d8cf3b639351f79e4f3e2",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/dc3b523c45e714c70de2ac5113b958223b55dc59",
+                "reference": "dc3b523c45e714c70de2ac5113b958223b55dc59",
                 "shasum": ""
             },
             "require": {
@@ -2033,7 +2033,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-04-17T13:10:32+00:00"
+            "time": "2026-04-21T18:22:01+00:00"
         },
         {
             "name": "psr-discovery/discovery",
@@ -4403,16 +4403,16 @@
         },
         {
             "name": "tempest/framework",
-            "version": "v3.9.0",
+            "version": "v3.10.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tempestphp/tempest-framework.git",
-                "reference": "263ef281876ce88a19eea6c6936fa5dfae9047be"
+                "reference": "d1c33fe968181dc0c75a5ef08b72c3fac1869a0e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tempestphp/tempest-framework/zipball/263ef281876ce88a19eea6c6936fa5dfae9047be",
-                "reference": "263ef281876ce88a19eea6c6936fa5dfae9047be",
+                "url": "https://api.github.com/repos/tempestphp/tempest-framework/zipball/d1c33fe968181dc0c75a5ef08b72c3fac1869a0e",
+                "reference": "d1c33fe968181dc0c75a5ef08b72c3fac1869a0e",
                 "shasum": ""
             },
             "require": {
@@ -4525,7 +4525,7 @@
                 "phpat/phpat": "^0.11.0",
                 "phpbench/phpbench": "^1.4",
                 "phpstan/phpstan": "2.1.40",
-                "phpunit/phpunit": "^12.5.8",
+                "phpunit/phpunit": "^12.5.22",
                 "predis/predis": "^3.0.0",
                 "riskio/oauth2-auth0": "^2.4",
                 "smolblog/oauth2-twitter": "^1.0",
@@ -4629,7 +4629,7 @@
             "description": "The PHP framework that gets out of your way.",
             "support": {
                 "issues": "https://github.com/tempestphp/tempest-framework/issues",
-                "source": "https://github.com/tempestphp/tempest-framework/tree/v3.9.0"
+                "source": "https://github.com/tempestphp/tempest-framework/tree/v3.10.0"
             },
             "funding": [
                 {
@@ -4637,20 +4637,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-04-01T06:15:40+00:00"
+            "time": "2026-04-23T11:47:44+00:00"
         },
         {
             "name": "tempest/highlight",
-            "version": "2.21.0",
+            "version": "2.22.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tempestphp/highlight.git",
-                "reference": "d499fe38255ff37622fe3b5954591d82265b0210"
+                "reference": "b966e3d747888e94990934533d8ca4c368f667a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tempestphp/highlight/zipball/d499fe38255ff37622fe3b5954591d82265b0210",
-                "reference": "d499fe38255ff37622fe3b5954591d82265b0210",
+                "url": "https://api.github.com/repos/tempestphp/highlight/zipball/b966e3d747888e94990934533d8ca4c368f667a9",
+                "reference": "b966e3d747888e94990934533d8ca4c368f667a9",
                 "shasum": ""
             },
             "require": {
@@ -4688,7 +4688,7 @@
             "description": "Fast, extensible, server-side code highlighting",
             "support": {
                 "issues": "https://github.com/tempestphp/highlight/issues",
-                "source": "https://github.com/tempestphp/highlight/tree/2.21.0"
+                "source": "https://github.com/tempestphp/highlight/tree/2.22.0"
             },
             "funding": [
                 {
@@ -4696,7 +4696,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-04-07T09:43:06+00:00"
+            "time": "2026-04-21T06:27:04+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -4860,16 +4860,16 @@
     "packages-dev": [
         {
             "name": "carthage-software/mago",
-            "version": "1.22.0",
+            "version": "1.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/carthage-software/mago.git",
-                "reference": "88c4170fb16e5aa941f035b6a924017505c934ce"
+                "reference": "ff885e99abe97222bb8b84dc346b59bddbe3a307"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/carthage-software/mago/zipball/88c4170fb16e5aa941f035b6a924017505c934ce",
-                "reference": "88c4170fb16e5aa941f035b6a924017505c934ce",
+                "url": "https://api.github.com/repos/carthage-software/mago/zipball/ff885e99abe97222bb8b84dc346b59bddbe3a307",
+                "reference": "ff885e99abe97222bb8b84dc346b59bddbe3a307",
                 "shasum": ""
             },
             "require": {
@@ -4904,7 +4904,7 @@
             ],
             "support": {
                 "issues": "https://github.com/carthage-software/mago/issues",
-                "source": "https://github.com/carthage-software/mago/tree/1.22.0"
+                "source": "https://github.com/carthage-software/mago/tree/1.24.0"
             },
             "funding": [
                 {
@@ -4912,7 +4912,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-04-18T06:49:40+00:00"
+            "time": "2026-04-22T07:00:59+00:00"
         },
         {
             "name": "myclabs/deep-copy",
