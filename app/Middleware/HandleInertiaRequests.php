@@ -6,10 +6,8 @@ namespace App\Middleware;
 
 use Inertia\Middleware\Middleware;
 use Tempest\Auth\Authentication\Authenticator;
-use Tempest\Core\Priority;
+use Tempest\Support\Priority;
 
-use Tempest\Http\Session\FormSession;
-use function Tempest\Container\get;
 use function Tempest\env;
 
 #[Priority(Priority::FRAMEWORK - 20)]
