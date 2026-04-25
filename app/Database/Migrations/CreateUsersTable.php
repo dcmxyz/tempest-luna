@@ -19,12 +19,14 @@ final class CreateUsersTable implements MigratesUp
             ->string('name')
             ->string('email')
             ->string('password', nullable: true)
+            ->string('remember_token', length: 130, nullable: true)
             ->datetime('email_verified_at', nullable: true)
             ->text('two_factor_secret', nullable: true)
             ->text('two_factor_recovery_codes', nullable: true)
             ->datetime('two_factor_confirmed_at', nullable: true)
             ->datetime('created_at', nullable: true)
             ->datetime('updated_at', nullable: true)
-            ->unique('email');
+            ->unique('email')
+            ->index('remember_token');
     }
 }
