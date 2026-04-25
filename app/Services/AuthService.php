@@ -21,7 +21,7 @@ final readonly class AuthService
         private PasswordHasher $passwordHasher,
         private Mailer $mailer,
         private AppSessionManager $sessionManager,
-    ){}
+    ) {}
 
     public function register(string $name, string $email, string $password): User
     {
@@ -80,8 +80,7 @@ final readonly class AuthService
             return false;
         }
 
-        $expired = DateTime::now()->getTimestamp()->getSeconds()
-            > $reset->created_at->plus(Duration::hours(1))->getTimestamp()->getSeconds();
+        $expired = DateTime::now()->getTimestamp()->getSeconds() > $reset->created_at->plus(Duration::hours(1))->getTimestamp()->getSeconds();
 
         if ($expired) {
             $reset->delete();
