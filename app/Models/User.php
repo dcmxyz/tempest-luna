@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Models;
 
 use App\Models\Traits\HasTimestamps;
+use SensitiveParameter;
 use Tempest\Auth\Authentication\Authenticatable;
 use Tempest\Database\IsDatabaseModel;
 use Tempest\Database\PrimaryKey;
@@ -25,16 +26,16 @@ final class User implements Authenticatable
 
         public string $email,
 
-        #[\SensitiveParameter]
-        #[Hidden]
+        #[SensitiveParameter, Hidden]
         public ?string $password = null,
 
-        #[\SensitiveParameter]
-        #[Hidden]
+        #[SensitiveParameter, Hidden]
+        public ?string $remember_token = null,
+
+        #[SensitiveParameter, Hidden]
         public ?string $two_factor_secret = null,
 
-        #[\SensitiveParameter]
-        #[Hidden]
+        #[SensitiveParameter, Hidden]
         public ?string $two_factor_recovery_codes = null,
 
         public ?DateTime $two_factor_confirmed_at = null,
