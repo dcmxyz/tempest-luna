@@ -26,7 +26,7 @@ final readonly class ForgotPasswordController
     {
         return inertia(
             component: 'Authentication/ForgotPassword',
-            props: ['status' => $this->session->get('status')]
+            props: ['status' => $this->session->get('status')],
         );
     }
 
@@ -39,7 +39,7 @@ final readonly class ForgotPasswordController
 
         $this->session->flash(
             key: 'status',
-            value: 'If that email address is in our system, you will receive a password reset link shortly.'
+            value: 'If that email address is in our system, you will receive a password reset link shortly.',
         );
 
         return new Redirect(uri([self::class, 'show']));
