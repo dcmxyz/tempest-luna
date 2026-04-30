@@ -1,4 +1,4 @@
-php-version = "8.5.0"
+php-version = "8.5"
 
 [source]
 paths = ["app", "tests"]
@@ -9,7 +9,7 @@ excludes = [
 ]
 
 [formatter]
-print-width = 180
+print-width = 120
 tab-width = 4
 use-tabs = false
 null-type-hint = "question"
