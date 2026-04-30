@@ -87,20 +87,22 @@ final readonly class AuthService
             return;
         }
 
-        $reset = PasswordReset::updateOrCreate(
+        $rawToken = $this->generateRandomToken(length: 32);
+
+        PasswordReset::updateOrCreate(
             find: ['email' => $email],
             update: [
-                'token' => $this->generateRandomToken(length: 32),
+                'token' => hash('sha256', $rawToken),
                 'created_at' => DateTime::now(),
             ],
         );
 
-        $this->mailer->send(new PasswordResetMail($user, $reset->token));
+        $this->mailer->send(new PasswordResetMail($user, $rawToken));
     }
 
     public function resetPassword(string $token, string $password): bool
     {
-        $reset = PasswordReset::find(token: $token)->first();
+        $reset = PasswordReset::find(token: hash('sha256', $token))->first();
 
         if ($reset === null) {
             return false;
