@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controllers\Authentication;
 
+use App\Middleware\RedirectIfAuthenticated;
 use App\Requests\Authentication\LoginRequest;
 use App\Services\AuthService;
 use Inertia\Response;
@@ -18,13 +19,13 @@ final readonly class LoginController
         private AuthService $authService,
     ) {}
 
-    #[Get('/login')]
+    #[Get('/login', middleware: [RedirectIfAuthenticated::class])]
     public function show(): Response
     {
         return inertia(component: 'Authentication/Login');
     }
 
-    #[Post('/login')]
+    #[Post('/login', middleware: [RedirectIfAuthenticated::class])]
     public function store(LoginRequest $request): Response|ResponseFactory|Redirect
     {
         $loggedIn = $this->authService->login(

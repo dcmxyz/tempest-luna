@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controllers\Authentication;
 
+use App\Middleware\RedirectIfAuthenticated;
 use App\Requests\Authentication\ResetPasswordRequest;
 use App\Services\AuthService;
 use Inertia\Response;
@@ -20,13 +21,13 @@ final readonly class ResetPasswordController
         private AuthService $authService,
     ) {}
 
-    #[Get('/reset-password/{token}')]
+    #[Get('/reset-password/{token}', middleware: [RedirectIfAuthenticated::class])]
     public function show(string $token): Response
     {
         return inertia(component: 'Authentication/ResetPassword', props: ['token' => $token]);
     }
 
-    #[Post('/reset-password')]
+    #[Post('/reset-password', middleware: [RedirectIfAuthenticated::class])]
     public function store(ResetPasswordRequest $request): Response|ResponseFactory|Redirect
     {
         $passwordReset = $this->authService->resetPassword(

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controllers\Authentication;
 
+use App\Middleware\RedirectIfAuthenticated;
 use App\Requests\Authentication\ForgotPasswordRequest;
 use App\Services\AuthService;
 use Inertia\Response;
@@ -21,7 +22,7 @@ final readonly class ForgotPasswordController
         private Session $session,
     ) {}
 
-    #[Get('/forgot-password')]
+    #[Get('/forgot-password', middleware: [RedirectIfAuthenticated::class])]
     public function show(): Response
     {
         return inertia(
@@ -30,7 +31,7 @@ final readonly class ForgotPasswordController
         );
     }
 
-    #[Post('/forgot-password')]
+    #[Post('/forgot-password', middleware: [RedirectIfAuthenticated::class])]
     public function send(ForgotPasswordRequest $request): Redirect
     {
         $this->authService->sendPasswordResetEmail(

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controllers\Authentication;
 
+use App\Middleware\MustBeAuthenticated;
 use App\Services\AuthService;
 use Tempest\Http\Responses\Redirect;
 use Tempest\Router\Post;
@@ -14,7 +15,7 @@ final readonly class LogoutController
         private AuthService $authService,
     ) {}
 
-    #[Post('/logout')]
+    #[Post('/logout', middleware: [MustBeAuthenticated::class])]
     public function __invoke(): Redirect
     {
         $this->authService->logout();

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Controllers\Authentication;
 
 use App\Config\Definitions\AuthConfig;
+use App\Middleware\RedirectIfAuthenticated;
 use App\Requests\Authentication\RegisterRequest;
 use App\Services\AuthService;
 use Inertia\Response;
@@ -21,13 +22,13 @@ final readonly class RegisterController
         private AuthService $authService,
     ) {}
 
-    #[Get('/register')]
+    #[Get('/register', middleware: [RedirectIfAuthenticated::class])]
     public function show(): Response
     {
         return inertia(component: 'Authentication/Register');
     }
 
-    #[Post('/register')]
+    #[Post('/register', middleware: [RedirectIfAuthenticated::class])]
     public function store(RegisterRequest $request): Response|Redirect
     {
         $user = $this->authService->register(
