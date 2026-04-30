@@ -25,8 +25,8 @@ validation_error:
         .input {$field :string}
         {$field} must be a valid email address
     unique.register_email: |
-            .input {$field :string}
-            This {$field} cannot be registered.
+        .input {$field :string}
+        This {$field} cannot be registered.
     is_password.register_password: |
         .input {$field :string}
         .input {$min :number}
