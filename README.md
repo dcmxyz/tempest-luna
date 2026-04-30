@@ -1,6 +1,9 @@
 # *Luna*
 > A starter kit for [Tempest PHP](https://tempestphp.com) using Inertia and Svelte.
 
+> [!CAUTION]
+> This project is not production-ready.
+
 > [!WARNING]
 > Work in progress.
 
