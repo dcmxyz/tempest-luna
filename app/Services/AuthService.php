@@ -12,15 +12,19 @@ use Tempest\Auth\Authentication\Authenticator;
 use Tempest\Cryptography\Password\PasswordHasher;
 use Tempest\DateTime\DateTime;
 use Tempest\DateTime\Duration;
+use Tempest\Http\Cookie\CookieManager;
 use Tempest\Mail\Mailer;
 
 final readonly class AuthService
 {
+    public const string COOKIE_REMEMBER_TOKEN = 'luna_remember_token';
+
     public function __construct(
         private Authenticator $authenticator,
         private PasswordHasher $passwordHasher,
         private Mailer $mailer,
         private AppSessionManager $sessionManager,
+        private CookieManager $cookieManager,
     ) {}
 
     public function register(string $name, string $email, string $password): User
@@ -34,7 +38,7 @@ final readonly class AuthService
         );
     }
 
-    public function login(string $email, string $password): bool
+    public function login(string $email, string $password, bool $remember = false): bool
     {
         $user = User::find(email: $email)
             ->include('password')
@@ -50,7 +54,29 @@ final readonly class AuthService
 
         $this->authenticator->authenticate($user);
 
+        if ($remember) {
+            $this->issueRememberToken($user);
+        }
+
         return true;
+    }
+
+    private function issueRememberToken(User $user): void
+    {
+        $token = $this->generateRandomToken(length: 64);
+
+        $user->update(remember_token: hash('sha256', $token));
+
+        $this->cookieManager->set(
+            key: self::COOKIE_REMEMBER_TOKEN,
+            value: $user->id . ':' . $token,
+            expiresAt: DateTime::now()->plus(Duration::days(30)),
+        );
+    }
+
+    public function rotateRememberToken(User $user): void
+    {
+        $this->issueRememberToken($user);
     }
 
     public function sendPasswordResetEmail(string $email): void
@@ -64,7 +90,7 @@ final readonly class AuthService
         $reset = PasswordReset::updateOrCreate(
             find: ['email' => $email],
             update: [
-                'token' => bin2hex(random_bytes(32)),
+                'token' => $this->generateRandomToken(length: 32),
                 'created_at' => DateTime::now(),
             ],
         );
@@ -80,7 +106,11 @@ final readonly class AuthService
             return false;
         }
 
-        $expired = DateTime::now()->getTimestamp()->getSeconds() > $reset->created_at->plus(Duration::hours(1))->getTimestamp()->getSeconds();
+        $expired = DateTime::now()->getTimestamp()->getSeconds() > $reset
+            ->created_at
+            ->plus(Duration::hours(1))
+            ->getTimestamp()
+            ->getSeconds();
 
         if ($expired) {
             $reset->delete();
@@ -102,6 +132,29 @@ final readonly class AuthService
 
     public function logout(): void
     {
+        $authenticatedUser = $this->authenticator->current();
+        $authenticatedUser?->update(remember_token: null);
+
+        $this->cookieManager->remove(self::COOKIE_REMEMBER_TOKEN);
+
         $this->sessionManager->destroySession();
+    }
+
+    private function generateRandomToken(int $length): string
+    {
+        $token = '';
+
+        while (strlen($token) < $length) {
+            $needed = $length - strlen($token);
+
+            $bytes = random_bytes((int) ceil($needed / 3) * 3);
+
+            $token .= $bytes
+                |> base64_encode(...)
+                |> (static fn ($subject) => str_replace(['/', '+', '='], '', $subject))
+                |> (static fn ($x) => substr($x, 0, $needed));
+        }
+
+        return $token;
     }
 }

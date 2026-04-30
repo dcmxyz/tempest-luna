@@ -30,6 +30,7 @@ final readonly class LoginController
         $loggedIn = $this->authService->login(
             email: $request->email,
             password: $request->password,
+            remember: true,
         );
 
         if (! $loggedIn) {
