@@ -17,11 +17,11 @@
         <Navbar />
     {/snippet}
 
-    <div class="flex flex-col gap-8 py-12">
-        <div class="grid grid-cols-3 gap-8">
-            {#each [1, 2, 1, 1, 1, 2, 3, 2, 1] as cols}
-                <div class="col-span-{cols} border border-ui-surface-border bg-ui-surface-background p-6">
-                    <div class="h-24 bg-ui-surface-backgrounds"></div>
+    <div class="flex flex-col gap-6 pt-8 flex-1">
+        <div class="grid grid-cols-3 gap-8 flex-1">
+            {#each [1, 2, 1, 1, 1, 2, 1, 1, 2] as cols}
+                <div class="col-span-{cols} border border-ui-surface-border bg-ui-surface-background opacity-50 p-6">
+                    <div class="bg-ui-surface-backgrounds"></div>
                 </div>
             {/each}
         </div>
