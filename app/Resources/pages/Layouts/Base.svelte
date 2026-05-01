@@ -18,6 +18,6 @@
     <title>{pageTitle}</title>
 </svelte:head>
 
-<main class="min-h-[calc(100dvh---spacing(8))] flex flex-col border border-ui-border p-4 overflow-hidden bg-ui-body-background">
+<main class="h-[calc(100dvh---spacing(8))] flex flex-col border border-ui-border p-4 overflow-hidden bg-ui-body-background overflow-y-scroll">
     {@render children?.()}
 </main>

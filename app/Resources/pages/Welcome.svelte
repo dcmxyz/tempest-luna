@@ -38,7 +38,7 @@
                 <nav class="flex items-center gap-x-6">
                     {#if auth.user}
                         <Link href={ uri('/logout') } inertiaProps={{ method: 'post' }} variant="no-visited">Logout</Link>
-                        <Button>Go to dashboard</Button>
+                        <Button href={ uri('/dashboard') }>Go to dashboard</Button>
                     {:else}
                         <Link href={ uri('/login') } variant="no-visited">Log in</Link>
                         <Button href={ uri('/register') } variant="primary">Create an account</Button>
