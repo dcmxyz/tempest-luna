@@ -2,12 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Commands;
+namespace App\Commands\Internal;
 
 use Tempest\Console\Console;
 use Tempest\Console\ConsoleCommand;
 use Tempest\Router\RouteConfig;
-
 use function Tempest\internal_storage_path;
 
 final readonly class GenerateTypescriptRoutesCommand
@@ -17,7 +16,7 @@ final readonly class GenerateTypescriptRoutesCommand
         private RouteConfig $routeConfig,
     ) {}
 
-    #[ConsoleCommand(name: 'internal:typescript-routes')]
+    #[ConsoleCommand(name: 'internal:generate-typescript-routes')]
     public function __invoke(): void
     {
         $routes = $this->collectRoutes();

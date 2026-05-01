@@ -4,7 +4,7 @@ import type { Plugin } from 'vite';
 export function tempestRoutes(): Plugin {
     const generate = () => {
         try {
-            execSync('./tempest internal:typescript-routes', { stdio: 'inherit' });
+            execSync('./tempest internal:generate-typescript-routes', { stdio: 'inherit' });
         } catch {
             console.error('[tempest-routes] Failed to generate routes');
         }
