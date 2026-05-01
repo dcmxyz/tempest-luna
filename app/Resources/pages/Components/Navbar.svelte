@@ -1,6 +1,6 @@
 <script lang="ts">
     import { page } from '@inertiajs/svelte'
-    import { Button, Link } from '@components'
+    import { Link } from '@components'
     import {uri, uriIs} from '@route'
 
     const auth = $derived(page.props.auth)
