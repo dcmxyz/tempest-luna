@@ -12,7 +12,9 @@ use Inertia\ResponseFactory;
 use Tempest\Http\Responses\Redirect;
 use Tempest\Router\Get;
 use Tempest\Router\Post;
+use Tempest\Validation\Exceptions\ValidationFailed;
 
+use function App\Helpers\fail_validation;
 use function Tempest\Router\uri;
 
 final readonly class ResetPasswordController
@@ -27,6 +29,9 @@ final readonly class ResetPasswordController
         return inertia(component: 'Authentication/ResetPassword', props: ['token' => $token]);
     }
 
+    /**
+     * @throws ValidationFailed
+     */
     #[Post('/reset-password', middleware: [RedirectIfAuthenticated::class])]
     public function store(ResetPasswordRequest $request): Response|ResponseFactory|Redirect
     {
@@ -36,9 +41,10 @@ final readonly class ResetPasswordController
         );
 
         if (! $passwordReset) {
-            return inertia('Authentication/ForgotPassword', [
-                'errors' => ['email' => 'These credentials do not match our records.'],
-            ]);
+            fail_validation(
+                field: 'token',
+                message: 'The reset token or your password is incorrect.',
+            );
         }
 
         return new Redirect(uri([LoginController::class, 'show']));

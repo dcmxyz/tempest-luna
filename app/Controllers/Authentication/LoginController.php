@@ -13,6 +13,9 @@ use Tempest\Http\Responses\Redirect;
 use Tempest\Router\Get;
 use Tempest\Router\Post;
 
+use Tempest\Validation\Exceptions\ValidationFailed;
+use function App\Helpers\fail_validation;
+
 final readonly class LoginController
 {
     public function __construct(
@@ -25,6 +28,9 @@ final readonly class LoginController
         return inertia(component: 'Authentication/Login');
     }
 
+    /**
+     * @throws ValidationFailed
+     */
     #[Post('/login', middleware: [RedirectIfAuthenticated::class])]
     public function store(LoginRequest $request): Response|ResponseFactory|Redirect
     {
@@ -35,9 +41,10 @@ final readonly class LoginController
         );
 
         if (! $loggedIn) {
-            return inertia('Authentication/Login', [
-                'errors' => ['email' => 'These credentials do not match our records.'],
-            ]);
+            fail_validation(
+                field: 'email',
+                message: 'These credentials do not match our records.',
+            );
         }
 
         return new Redirect('/');
