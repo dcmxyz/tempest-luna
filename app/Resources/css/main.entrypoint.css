@@ -1,13 +1,17 @@
 @import "tailwindcss";
 
+/**
+ * Luna's UI and UX are partly inspired by the GOV.UK Design System and the UK's Intelligence Community Design System
+ * Look them up, they're really well thought out.
+ *
+ * https://design-system.service.gov.uk/
+ * https://design.sis.gov.uk/
+ */
+
 @theme {
     --font-sans: 'Atkinson Hyperlegible Next', ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-serif: 'Fraunces', ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
 
-    /**
-     * Inspired by the GOV.UK Design System colour palette
-     * https://design-system.service.gov.uk/styles/colour/
-     */
     --color-ui-text: var(--color-cod-950);
     --color-ui-secondary-text: var(--color-cod-700);
 
