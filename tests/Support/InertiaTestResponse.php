@@ -29,7 +29,10 @@ final class InertiaTestResponse
         assert(array_key_exists($key, $this->props), "Prop [{$key}] not found.");
 
         if ($expected !== null) {
-            assert($this->props[$key] === $expected, "Prop [{$key}] expected [{$expected}], got [{$this->props[$key]}].");
+            assert(
+                $this->props[$key] === $expected,
+                "Prop [{$key}] expected [{$expected}], got [{$this->props[$key]}].",
+            );
         }
 
         return $this;

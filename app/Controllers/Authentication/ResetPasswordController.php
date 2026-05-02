@@ -22,7 +22,7 @@ final readonly class ResetPasswordController
     ) {}
 
     #[Get('/reset-password/{token}', middleware: [RedirectIfAuthenticated::class])]
-    public function show(string $token): Response
+    public function show(#[\SensitiveParameter] string $token): Response
     {
         return inertia(component: 'Authentication/ResetPassword', props: ['token' => $token]);
     }

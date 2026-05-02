@@ -27,7 +27,7 @@ final readonly class AuthService
         private CookieManager $cookieManager,
     ) {}
 
-    public function register(string $name, string $email, string $password): User
+    public function register(string $name, string $email, #[\SensitiveParameter] string $password): User
     {
         return User::create(
             name: $name,
@@ -38,7 +38,7 @@ final readonly class AuthService
         );
     }
 
-    public function login(string $email, string $password, bool $remember = false): bool
+    public function login(string $email, #[\SensitiveParameter] string $password, bool $remember = false): bool
     {
         $user = User::find(email: $email)
             ->include('password')
@@ -100,7 +100,7 @@ final readonly class AuthService
         $this->mailer->send(new PasswordResetMail($user, $rawToken));
     }
 
-    public function resetPassword(string $token, string $password): bool
+    public function resetPassword(#[\SensitiveParameter] string $token, #[\SensitiveParameter] string $password): bool
     {
         $reset = PasswordReset::find(token: hash('sha256', $token))->first();
 

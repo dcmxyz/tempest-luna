@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Mail;
 
-use App\Controllers\Authentication\ForgotPasswordController;
 use App\Controllers\Authentication\ResetPasswordController;
 use App\Models\User;
 use Tempest\Mail\Email;
@@ -19,6 +18,7 @@ final class PasswordResetMail implements Email
 {
     public function __construct(
         private readonly User $user,
+        #[\SensitiveParameter]
         private readonly string $token,
     ) {}
 

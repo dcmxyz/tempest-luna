@@ -12,7 +12,7 @@ use Tempest\Validation\Rule;
 final readonly class FailWithMessage implements Rule, HasErrorMessage
 {
     public function __construct(
-        private string $message
+        private string $message,
     ) {}
 
     public function isValid(mixed $value): bool

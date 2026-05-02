@@ -10,7 +10,7 @@ use Tempest\Validation\TranslationKey;
 final class EmailRequest implements Request
 {
     use IsRequest;
-    
+
     #[TranslationKey('email')]
     #[IsEmail]
     public string $email;

@@ -10,7 +10,7 @@ use Tempest\Validation\TranslationKey;
 final class PasswordRequest implements Request
 {
     use IsRequest;
-    
+
     #[TranslationKey('current_password')]
     public string $current_password;
 

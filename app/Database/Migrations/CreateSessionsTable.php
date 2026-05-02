@@ -27,7 +27,7 @@ final class CreateSessionsTable implements MigratesUp
             ->text('data');
 
         if ($this->databaseConfig instanceof PostgresConfig) {
-            $createTableStatement->raw(statement: "user_id UUID NULL");
+            $createTableStatement->raw(statement: 'user_id UUID NULL');
         } else {
             $createTableStatement->string(name: 'user_id', length: 36, nullable: true);
         }

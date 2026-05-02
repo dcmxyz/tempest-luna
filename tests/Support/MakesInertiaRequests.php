@@ -14,8 +14,11 @@ use function Tempest\Support\Arr\merge;
  */
 trait MakesInertiaRequests
 {
-    private function inertia(string $uri, array $query = [], array $headers = []): InertiaTestResponse|TestResponseHelper
-    {
+    private function inertia(
+        string $uri,
+        array $query = [],
+        array $headers = [],
+    ): InertiaTestResponse|TestResponseHelper {
         $response = $this->http->get(
             uri: $uri,
             query: $query,

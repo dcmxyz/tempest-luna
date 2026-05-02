@@ -54,8 +54,8 @@ final readonly class AccountController
         $failures = $this->validator->validateValue(
             value: $request->get('email'),
             rules: new UniqueEmailExcluding(
-                excludeId: $this->authenticator->current()->id
-            )
+                excludeId: $this->authenticator->current()->id,
+            ),
         );
 
         if ($failures) {
@@ -80,7 +80,7 @@ final readonly class AccountController
         if (! $this->passwordHasher->verify($request->get('current_password'), $user->password)) {
             fail_validation(
                 field: 'current_password',
-                message: 'The current password is incorrect.'
+                message: 'The current password is incorrect.',
             );
         }
 
@@ -102,7 +102,7 @@ final readonly class AccountController
         if (! $this->passwordHasher->verify($request->get('current_password'), $user->password)) {
             fail_validation(
                 field: 'current_password',
-                message: 'The current password is incorrect.'
+                message: 'The current password is incorrect.',
             );
         }
 
