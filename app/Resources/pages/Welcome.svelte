@@ -1,8 +1,7 @@
 <script lang="ts">
     import { page } from '@inertiajs/svelte'
     import { App } from "@layouts";
-    import {Button, Link} from "@components";
-    import { uri } from "@route";
+    import { Navbar } from "@components";
 
     interface Props {
         tempestVersion?: string;
@@ -27,24 +26,19 @@
 </script>
 
 <App title="Welcome">
+    {#snippet header()}
+        <Navbar />
+    {/snippet}
+
     <div class="flex-1 flex items-center justify-center">
         <div class="w-full max-w-3xl flex flex-col gap-4">
-            <header class="flex items-center justify-between pl-12 pr-6 py-3 border border-ui-border bg-ui-surface-background">
-                <div class="text-lg leading-none font-serif">
-                    {#if auth.user}
+            {#if auth.user}
+                <header class="flex items-center pl-12 p-6 border border-ui-border">
+                    <div class="text-xl leading-none font-serif">
                         { greeting }, { firstName }.
-                    {/if}
-                </div>
-                <nav class="flex items-center gap-x-6">
-                    {#if auth.user}
-                        <Link href={ uri('/logout') } inertiaProps={{ method: 'post' }} variant="no-visited">Logout</Link>
-                        <Button href={ uri('/dashboard') }>Go to dashboard</Button>
-                    {:else}
-                        <Link href={ uri('/login') } variant="no-visited">Log in</Link>
-                        <Button href={ uri('/register') } variant="primary">Create an account</Button>
-                    {/if}
-                </nav>
-            </header>
+                    </div>
+                </header>
+            {/if}
 
             <div class="flex flex-col sm:flex-row border border-ui-border">
                 <div class="flex-1 p-8 sm:p-12 flex flex-col justify-between gap-10 border-b sm:border-b-0 sm:border-r border-ui-border">

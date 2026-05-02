@@ -1,7 +1,7 @@
 <script lang="ts">
     import { page } from '@inertiajs/svelte'
-    import {Link, UserAvatar} from '@components'
-    import {uri, uriIs} from '@route'
+    import { Link, UserAvatar } from '@components'
+    import { uri, uriIs } from '@route'
 
     const auth = $derived(page.props.auth)
     const firstName = $derived(auth.user?.name?.split(' ')[0])
@@ -13,24 +13,35 @@
     </div>
 
     <div class="px-4 flex items-stretch gap-x-6 min-h-12 bg-ui-surface-background border-t border-b border-ui-surface-border">
-        <Link
-            href={uri('/dashboard')}
-            variant="no-visited"
-            class={
-                uriIs('/dashboard')
+        {#if auth.user}
+            <Link
+                    href={ uri('/') }
+                    variant="no-visited"
+                    class={
+                uriIs('/')
                     ? 'border-b-4 border-ui-brand  transition-colors no-underline pt-3 px-0.5'
                     : 'border-b-4 border-transparent hover:border-ui-brand transition-colors no-underline pt-3 px-0.5'
-            }
-        >
-            Dashboard
-        </Link>
+                }
+            >
+                Welcome
+            </Link>
 
-        {#if auth.user}
-            <!-- Spacer / Replaces justify-between on parent -->
+            <Link
+                href={ uri('/dashboard') }
+                variant="no-visited"
+                class={
+                    uriIs('/dashboard')
+                        ? 'border-b-4 border-ui-brand  transition-colors no-underline pt-3 px-0.5'
+                        : 'border-b-4 border-transparent hover:border-ui-brand transition-colors no-underline pt-3 px-0.5'
+                }
+            >
+                Dashboard
+            </Link>
+
             <div class="flex-1"></div>
 
             <Link
-                href={uri('/account')}
+                href={ uri('/account') }
                 variant="no-visited"
                 class={
                     uriIs('/account*')
@@ -42,12 +53,42 @@
             </Link>
 
             <Link
-                href={uri('/logout')}
+                href={ uri('/logout') }
                 inertiaProps={{ method: 'post' }}
                 variant="no-visited"
                 class="border-b-4 border-transparent hover:border-ui-brand transition-colors no-underline pt-3 px-0.5"
             >
                 Logout
+            </Link>
+        {:else}
+            <Link
+                href={ uri('/') }
+                variant="no-visited"
+                class={
+                uriIs('/')
+                    ? 'border-b-4 border-ui-brand  transition-colors no-underline pt-3 px-0.5'
+                    : 'border-b-4 border-transparent hover:border-ui-brand transition-colors no-underline pt-3 px-0.5'
+                }
+            >
+                Welcome
+            </Link>
+
+            <div class="flex-1"></div>
+
+            <Link
+                href={ uri('/login') }
+                variant="no-visited"
+                class="border-b-4 border-transparent hover:border-ui-brand transition-colors no-underline pt-3 px-0.5"
+            >
+                Log in
+            </Link>
+
+            <Link
+                href={ uri('/register') }
+                variant="no-visited"
+                class="border-b-4 border-transparent hover:border-ui-brand transition-colors no-underline pt-3 px-0.5"
+            >
+                Create an account
             </Link>
         {/if}
     </div>
