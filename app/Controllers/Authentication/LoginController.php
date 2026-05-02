@@ -12,8 +12,8 @@ use Inertia\ResponseFactory;
 use Tempest\Http\Responses\Redirect;
 use Tempest\Router\Get;
 use Tempest\Router\Post;
-
 use Tempest\Validation\Exceptions\ValidationFailed;
+
 use function App\Helpers\fail_validation;
 
 final readonly class LoginController
