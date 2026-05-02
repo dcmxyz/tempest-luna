@@ -1,7 +1,7 @@
 <script lang="ts">
     import { page } from '@inertiajs/svelte'
     import { App } from '@layouts'
-    import Navbar from '@components/Navbar.svelte'
+    import { Navbar } from '@components'
 
     interface Props {
         [key: string]: any

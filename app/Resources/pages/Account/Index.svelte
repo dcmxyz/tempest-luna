@@ -2,9 +2,9 @@
     import { page } from '@inertiajs/svelte'
     import { App } from '@layouts'
     import { Navbar } from '@components'
-    import ProfileSection from './ProfileSection.svelte'
-    import PasswordSection from './PasswordSection.svelte'
-    import DeleteSection from './DeleteSection.svelte'
+    import ProfileSection from '@pages/Account/ProfileSection.svelte'
+    import PasswordSection from '@pages/Account/PasswordSection.svelte'
+    import DeleteSection from '@pages/Account/DeleteSection.svelte'
 
     interface Props {
         [key: string]: any
