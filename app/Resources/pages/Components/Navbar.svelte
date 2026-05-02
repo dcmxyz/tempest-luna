@@ -1,6 +1,6 @@
 <script lang="ts">
     import { page } from '@inertiajs/svelte'
-    import { Link } from '@components'
+    import {Link, UserAvatar} from '@components'
     import {uri, uriIs} from '@route'
 
     const auth = $derived(page.props.auth)
@@ -8,11 +8,11 @@
 </script>
 
 <header class="-m-4 mb-0">
-    <div class="px-6 py-4">
+    <div class="px-4 py-4">
         <span class="font-serif text-xl font-black leading-none text-ui-text">Luna</span>
     </div>
 
-    <div class="px-6 flex items-stretch gap-x-6 min-h-12 bg-ui-surface-background border-t border-b border-ui-surface-border">
+    <div class="px-4 flex items-stretch gap-x-6 min-h-12 bg-ui-surface-background border-t border-b border-ui-surface-border">
         <Link
             href={uri('/dashboard')}
             variant="no-visited"
@@ -26,12 +26,19 @@
         </Link>
 
         {#if auth.user}
+            <!-- Spacer / Replaces justify-between on parent -->
+            <div class="flex-1"></div>
+
             <Link
-                href={uri('/dashboard')}
+                href={uri('/account')}
                 variant="no-visited"
-                class="border-b-4 border-transparent hover:border-ui-brand transition-colors no-underline pt-3 px-0.5"
+                class={
+                    uriIs('/account*')
+                        ? 'border-b-4 border-ui-brand  transition-colors no-underline pt-3 px-0.5'
+                        : 'border-b-4 border-transparent hover:border-ui-brand transition-colors no-underline pt-3 px-0.5'
+                }
             >
-                My account ({firstName ?? ''})
+                <span class="flex">My account (&nbsp;{firstName ?? ''}&nbsp;<UserAvatar name={auth.user?.name} size={18} />&nbsp;)</span>
             </Link>
 
             <Link
