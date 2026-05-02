@@ -42,7 +42,7 @@ final readonly class ResetPasswordController
 
         if (! $passwordReset) {
             fail_validation(
-                field: 'token',
+                field: 'password',
                 message: 'The reset token or your password is incorrect.',
             );
         }
