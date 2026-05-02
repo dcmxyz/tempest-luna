@@ -1,4 +1,4 @@
-# *Luna*
+# Luna
 A starter kit for [Tempest PHP](https://tempestphp.com) using Inertia and Svelte.
 
 ---
@@ -6,7 +6,7 @@ A starter kit for [Tempest PHP](https://tempestphp.com) using Inertia and Svelte
 > [!WARNING]
 > This project is not production-ready (Tempest is not yet stable), but you can use it as a starting point for your own projects.
 
-> [!INFO]
+> [!NOTE]
 > This is a work in progress.
 
 ---
