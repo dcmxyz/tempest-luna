@@ -5,12 +5,11 @@ declare(strict_types=1);
 namespace App\Middleware;
 
 use Inertia\Middleware\Middleware;
-use Tempest\Auth\Authentication\Authenticator;
 use Tempest\Support\Priority;
 
 use function Tempest\env;
 
-#[Priority(Priority::FRAMEWORK - 20)]
+#[Priority(Priority::HIGH)]
 class HandleInertiaRequests extends Middleware
 {
     /**
@@ -21,19 +20,12 @@ class HandleInertiaRequests extends Middleware
 
     public function share(): array
     {
-        return array_replace_recursive(
-            parent::share(),
-            [
-                'auth' => $this->authShared(),
-                'app' => $this->appShared(),
-            ],
-        );
-    }
-
-    private function authShared(): array
-    {
         return [
-            'user' => static fn (Authenticator $auth) => $auth->current(),
+            ...parent::share(),
+            'app' => $this->appShared(),
+            'flash' => $this->inertia->always(fn () => [
+                'success' => $this->session->get('success'),
+            ]),
         ];
     }
 
