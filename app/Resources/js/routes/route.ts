@@ -1,6 +1,6 @@
 /**
  * Lightweight typed URI helper. Builds URLs from the generated Tempest route manifest.
- * Run `internal:generate-typescript-routes` (or let the Vite plugin do it) to keep routes in sync.
+ * Run `internal:export-routes` (or let the Vite plugin do it) to keep routes in sync.
  *
  * uri('/login')                                   -> "/login"
  * uri('/test/{abc}', { abc: 1 })                  -> "/test/1"
@@ -13,7 +13,7 @@
  * uriIs('/login', '/dashboard')                   -> false
  */
 
-import { routes } from '@tempest/typescript/routes';
+import { routes } from '@tempest/generated/routes';
 
 // { method: "GET", uri: "/login" } | { method: "POST", uri: "/login" } | ...
 type AppRoute = typeof routes[number];

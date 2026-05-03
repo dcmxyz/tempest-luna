@@ -10,7 +10,7 @@ use Tempest\Router\RouteConfig;
 
 use function Tempest\internal_storage_path;
 
-final readonly class GenerateTypescriptRoutesCommand
+final readonly class ExportRoutesCommand
 {
     public function __construct(
         private Console $console,
@@ -18,7 +18,7 @@ final readonly class GenerateTypescriptRoutesCommand
     ) {}
 
     #[ConsoleCommand(
-        name: 'internal:generate-typescript-routes',
+        name: 'internal:export-routes',
         description: 'Generate the typescript routes file used by the uri() helper function in the frontend.',
     )]
     public function __invoke(): void
@@ -28,7 +28,7 @@ final readonly class GenerateTypescriptRoutesCommand
         $json = json_encode($routes, JSON_THROW_ON_ERROR | JSON_UNESCAPED_SLASHES);
         $output = "// This file is auto-generated. Do not edit manually.\nexport const routes = {$json} as const;\n";
 
-        $path = internal_storage_path('typescript/routes.ts');
+        $path = internal_storage_path('generated/routes.ts');
         $directory = dirname($path);
 
         if (! is_dir($directory) && ! mkdir($directory, 0o755, recursive: true) && ! is_dir($directory)) {
