@@ -16,3 +16,4 @@ public/build/
 .run/
 .DS_Store
 .ddless
+database.sqlite
