@@ -148,6 +148,10 @@ final readonly class AuthService
 
     public function sendVerificationEmail(User $user): void
     {
+        if ($user->email_verified_at !== null) {
+            return;
+        }
+
         $uri = $this->uriGenerator->createTemporarySignedUri(
             action: [VerifyEmailController::class, 'verify'],
             duration: Duration::minutes(15),
