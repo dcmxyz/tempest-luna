@@ -51,10 +51,12 @@ final readonly class AccountController
     #[Post(uri: '/account/email', middleware: [MustBeAuthenticated::class])]
     public function updateEmail(EmailRequest $request): Response|ResponseFactory|Redirect
     {
+        $user = $this->authenticator->current();
+
         $failures = $this->validator->validateValue(
             value: $request->get('email'),
             rules: new UniqueEmailExcluding(
-                excludeId: $this->authenticator->current()->id,
+                excludeId: $user->id,
             ),
         );
 
@@ -62,7 +64,10 @@ final readonly class AccountController
             throw $this->validator->createValidationFailureException(['email' => $failures]);
         }
 
-        $this->authenticator->current()?->update(email: $request->get('email'));
+        $user?->update(
+            email: $request->get('email'),
+            email_verified_at: null,
+        );
 
         return new Redirect('/account');
     }
