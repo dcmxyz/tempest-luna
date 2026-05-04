@@ -1,18 +1,29 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8" />
-</head>
-<body>
-<table cellpadding="0" cellspacing="0" border="0">
-    <tr>
-        <td style="font-family:Arial,sans-serif; font-size:16px; color:#111111; line-height:1.6;">
-            <p>Hi {{ $user->name }},</p>
-            <p>Click the link below to confirm your email address. It expires in 1 hour.</p>
-            <p><a href="{{ $verificationUri }}">Confirm your email address</a></p>
-            <p>If you didn't create an account, you can safely ignore this email.</p>
-        </td>
-    </tr>
-</table>
-</body>
-</html>
+<x-mail>
+    <x-mail-title>
+        <strong style="font-size:20px;">
+            {{ Tempest\env('APPLICATION_NAME', 'Luna') }}
+        </strong>
+    </x-mail-title>
+
+    <x-mail-paragraph>
+        Hello {{ $user->name }},
+    </x-mail-paragraph>
+
+    <x-mail-paragraph>
+        Please click the button below to confirm your email address. It expires in 15 minutes.
+    </x-mail-paragraph>
+
+    <x-mail-button :url="$verificationUri">
+        Confirm your email address
+    </x-mail-button>
+
+    <x-mail-paragraph>
+        If you cannot click the button, copy and paste the following link into your browser:
+        <br />
+        <span style="font-size: 14px; opacity: 0.5;">{{ $verificationUri }}</span>
+    </x-mail-paragraph>
+
+    <x-mail-paragraph>
+        If you didn't create an account, you can safely ignore this email.
+    </x-mail-paragraph>
+</x-mail>
