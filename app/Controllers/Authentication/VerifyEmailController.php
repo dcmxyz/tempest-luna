@@ -52,6 +52,6 @@ final readonly class VerifyEmailController
     {
         $this->authService->sendVerificationEmail($this->authenticator->current());
 
-        return new Redirect(uri([self::class, 'notice']));
+        return new Redirect(uri([AccountController::class, 'index']));
     }
 }

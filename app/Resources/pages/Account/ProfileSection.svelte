@@ -51,7 +51,6 @@
     <div class="border-t border-ui-border"></div>
 
     <div>
-        <!--TODO: Add email verification-->
         {#if !emailVerified}
             <NotificationBanner
                 type="info"
@@ -59,7 +58,7 @@
                 message="Please verify your email address. A verification link has been sent to your email address."
                 class="mb-6"
             >
-                <Link href={'#'/*uri('/account/resend')*/} inertiaProps={{ method: 'post' }} variant="no-visited">
+                <Link href={ uri('/account/email/verify/resend') } inertiaProps={{ method: 'post' }} variant="no-visited">
                     Resend verification
                 </Link>
             </NotificationBanner>
