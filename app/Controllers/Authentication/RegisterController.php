@@ -37,6 +37,8 @@ final readonly class RegisterController
             password: $request->password,
         );
 
+        $this->authService->sendVerificationEmail($user);
+
         if ($this->authConfig->loginAfterRegister) {
             $this->authenticator->authenticate($user);
         }

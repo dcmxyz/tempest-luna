@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Services;
 
+use App\Controllers\Authentication\VerifyEmailController;
+use App\Mail\EmailAddressConfirmMail;
 use App\Mail\PasswordResetMail;
 use App\Models\PasswordReset;
 use App\Models\User;
@@ -14,6 +16,7 @@ use Tempest\DateTime\DateTime;
 use Tempest\DateTime\Duration;
 use Tempest\Http\Cookie\CookieManager;
 use Tempest\Mail\Mailer;
+use Tempest\Router\UriGenerator;
 
 final readonly class AuthService
 {
@@ -25,6 +28,7 @@ final readonly class AuthService
         private Mailer $mailer,
         private AppSessionManager $sessionManager,
         private CookieManager $cookieManager,
+        private UriGenerator $uriGenerator,
     ) {}
 
     public function register(string $name, string $email, #[\SensitiveParameter] string $password): User
@@ -140,6 +144,22 @@ final readonly class AuthService
         $this->cookieManager->remove(self::COOKIE_REMEMBER_TOKEN);
 
         $this->sessionManager->destroySession();
+    }
+
+    public function sendVerificationEmail(User $user): void
+    {
+        $uri = $this->uriGenerator->createTemporarySignedUri(
+            action: [VerifyEmailController::class, 'verify'],
+            duration: Duration::minutes(15),
+            id: $user->id,
+        );
+
+        $this->mailer->send(new EmailAddressConfirmMail($user, $uri));
+    }
+
+    public function verifyEmail(User $user): void
+    {
+        $user->update(email_verified_at: DateTime::now());
     }
 
     private function generateRandomToken(int $length): string
