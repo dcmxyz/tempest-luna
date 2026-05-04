@@ -163,6 +163,10 @@ final readonly class AuthService
 
     public function verifyEmail(User $user): void
     {
+        if ($user->email_verified_at !== null) {
+            return;
+        }
+
         $user->update(email_verified_at: DateTime::now());
     }
 
