@@ -1,5 +1,4 @@
 <script lang="ts">
-    import { page } from '@inertiajs/svelte'
     import { App } from "@layouts";
     import { Navbar } from "@components";
 
@@ -16,13 +15,6 @@
         phpVersion,
         ...rest
     }: Props = $props();
-
-    const auth = $derived(page.props.auth);
-
-    const hour = new Date().getHours();
-    const greeting = hour < 6 ? 'Good night' : hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
-
-    const firstName = $derived(auth.user?.name?.split(' ')[0]);
 </script>
 
 <App title="Welcome">
@@ -32,14 +24,6 @@
 
     <div class="flex-1 flex items-center justify-center">
         <div class="w-full max-w-3xl flex flex-col gap-4">
-            {#if auth.user}
-                <header class="flex items-center pl-12 p-6 border border-ui-border">
-                    <div class="text-xl leading-none font-serif">
-                        { greeting }, { firstName }.
-                    </div>
-                </header>
-            {/if}
-
             <div class="flex flex-col sm:flex-row border border-ui-border">
                 <div class="flex-1 p-8 sm:p-12 flex flex-col justify-between gap-10 border-b sm:border-b-0 sm:border-r border-ui-border">
                     <div>
