@@ -6,15 +6,15 @@
     import type { Uri } from '@route';
 
     const button = tv({
-        base: "inline-block rounded-xs px-3 py-2.5 text-lg font-medium transition leading-none cursor-pointer border border-transparent focus:ring-2 focus:ring-offset-2 focus:outline-5 focus:outline-offset-2 select-none focus:bg-ui-focus focus:text-ui-focus-text",
+        base: "inline-block border-2 bg-white px-3 py-1.5 font-semibold focus:outline-0 rounded-xs",
         variants: {
             variant: {
-                primary: "text-white bg-ui-button hover:bg-ui-button-shade focus:ring-ui-button focus:outline-ui-button/40 active:ring-ui-button active:outline-ui-button/40 active:shadow-none",
-                secondary: "text-ui-button border bg-white border-ui-button hover:bg-ui-button-shade/20 focus:ring-ui-button focus:outline-ui-button/40 active:ring-ui-button active:outline-ui-button/40 active:shadow-none",
-                danger: "text-white bg-ui-button-danger hover:bg-ui-button-danger-shade focus:ring-ui-danger focus:outline-ui-danger/40 active:ring-ui-danger active:outline-ui-danger/40 active:shadow-none",
+                primary: "border-ui-button text-ui-text shadow-[4px_4px_0_0] hover:bg-ui-focus focus:ring-2 focus:ring-ui-focus",
+                secondary: "border-ui-button text-ui-text hover:bg-ui-focus focus:ring-2 focus:ring-ui-focus",
+                danger: "border-ui-button-danger text-ui-button-danger-shade shadow-[4px_4px_0_0] shadow-ui-button-danger hover:bg-ui-focus focus:ring-2 focus:ring-ui-focus",
             },
             disabled: {
-                true: "opacity-80 bg-white border-ui-button cursor-not-allowed pointer-events-none",
+                true: "opacity-80 cursor-not-allowed pointer-events-none",
                 false: "",
             }
         },
@@ -65,7 +65,7 @@
         {...rest}
     >
         {#if loading}
-            <span class="block w-full h-2.5 my-1 rounded-full border border-ui-button-shade bg-ui-button-shade animate-[drain_1.5s_linear_infinite]"></span>
+            <span class="block w-full h-3 my-1.5 rounded-full border border-ui-button-shade bg-ui-button-shade animate-[drain_1.5s_linear_infinite]"></span>
         {:else}
             {@render children?.()}
         {/if}
@@ -79,7 +79,7 @@
         {...rest}
     >
         {#if loading}
-            <span class="block w-full h-2.5 my-1 rounded-full border border-ui-button-shade bg-ui-button-shade animate-[drain_1.5s_linear_infinite]"></span>
+            <span class="block w-full h-3 my-1.5 rounded-full border border-ui-button-shade bg-ui-button-shade animate-[drain_1.5s_linear_infinite]"></span>
         {:else}
             {@render children?.()}
         {/if}
