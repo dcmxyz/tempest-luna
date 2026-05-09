@@ -9,7 +9,7 @@
 
 <header class="-m-4 mb-0">
     <div class="px-4 py-4">
-        <span class="font-serif text-xl font-black leading-none text-ui-text">Luna</span>
+        <span class="font-mono text-xl font-black leading-none text-ui-text">Luna</span>
     </div>
 
     <div class="px-4 flex items-stretch gap-x-6 min-h-12 bg-ui-surface-background border-t border-b border-ui-surface-border">
@@ -19,8 +19,8 @@
                     variant="no-visited"
                     class={
                 uriIs('/')
-                    ? 'border-b-4 border-ui-brand  transition-colors no-underline pt-3.5 px-0.5'
-                    : 'border-b-4 border-transparent hover:border-ui-brand transition-colors no-underline pt-3.5 px-0.5'
+                    ? 'border-b-4 border-ui-link-border  transition-colors no-underline pt-3.5 px-0.5'
+                    : 'border-b-4 border-transparent hover:border-ui-link-border transition-colors no-underline pt-3.5 px-0.5'
                 }
             >
                 Welcome
@@ -31,8 +31,8 @@
                 variant="no-visited"
                 class={
                     uriIs('/dashboard')
-                        ? 'border-b-4 border-ui-brand  transition-colors no-underline pt-3.5 px-0.5'
-                        : 'border-b-4 border-transparent hover:border-ui-brand transition-colors no-underline pt-3.5 px-0.5'
+                        ? 'border-b-4 border-ui-link-border  transition-colors no-underline pt-3.5 px-0.5'
+                        : 'border-b-4 border-transparent hover:border-ui-link-border transition-colors no-underline pt-3.5 px-0.5'
                 }
             >
                 Dashboard
@@ -45,8 +45,8 @@
                 variant="no-visited"
                 class={
                     uriIs('/account*')
-                        ? 'border-b-4 border-ui-brand  transition-colors no-underline pt-3.5 px-0.5'
-                        : 'border-b-4 border-transparent hover:border-ui-brand transition-colors no-underline pt-3.5 px-0.5'
+                        ? 'border-b-4 border-ui-link-border  transition-colors no-underline pt-3.5 px-0.5'
+                        : 'border-b-4 border-transparent hover:border-ui-link-border transition-colors no-underline pt-3.5 px-0.5'
                 }
             >
                 <span class="flex">My account (&nbsp;{firstName ?? ''}&nbsp;<UserAvatar name={auth.user?.name} size={18} />&nbsp;)</span>
@@ -56,7 +56,7 @@
                 href={ uri('/logout') }
                 inertiaProps={{ method: 'post' }}
                 variant="no-visited"
-                class="border-b-4 border-transparent hover:border-ui-brand transition-colors no-underline pt-3.5 px-0.5"
+                class="border-b-4 border-transparent hover:border-ui-link-border transition-colors no-underline pt-3.5 px-0.5"
             >
                 Logout
             </Link>
@@ -66,8 +66,8 @@
                 variant="no-visited"
                 class={
                 uriIs('/')
-                    ? 'border-b-4 border-ui-brand  transition-colors no-underline pt-3.5 px-0.5'
-                    : 'border-b-4 border-transparent hover:border-ui-brand transition-colors no-underline pt-3.5 px-0.5'
+                    ? 'border-b-4 border-ui-link-border  transition-colors no-underline pt-3.5 px-0.5'
+                    : 'border-b-4 border-transparent hover:border-ui-link-border transition-colors no-underline pt-3.5 px-0.5'
                 }
             >
                 Welcome
@@ -78,7 +78,7 @@
             <Link
                 href={ uri('/login') }
                 variant="no-visited"
-                class="border-b-4 border-transparent hover:border-ui-brand transition-colors no-underline pt-3.5 px-0.5"
+                class="border-b-4 border-transparent hover:border-ui-link-border transition-colors no-underline pt-3.5 px-0.5"
             >
                 Log in
             </Link>
@@ -86,7 +86,7 @@
             <Link
                 href={ uri('/register') }
                 variant="no-visited"
-                class="border-b-4 border-transparent hover:border-ui-brand transition-colors no-underline pt-3.5 px-0.5"
+                class="border-b-4 border-transparent hover:border-ui-link-border transition-colors no-underline pt-3.5 px-0.5"
             >
                 Create an account
             </Link>

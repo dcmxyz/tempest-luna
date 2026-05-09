@@ -33,8 +33,8 @@
             />
 
             <div class="flex items-center gap-4 mt-2">
-                <Button type="submit" variant="danger" disabled={ form.processing }>
-                    { form.processing ? 'Please wait…' : 'Confirm delete' }
+                <Button type="submit" variant="danger" loading={ form.processing }>
+                    Confirm delete
                 </Button>
                 <Button variant="secondary" onclick={ () => confirming = false }>Cancel</Button>
             </div>

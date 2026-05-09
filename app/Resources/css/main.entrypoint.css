@@ -28,6 +28,7 @@
     --color-ui-button-danger-shade: var(--color-flush-800);
 
     --color-ui-border: var(--color-cod-300);
+    --color-ui-link-border: var(--color-cod-950);
     --color-ui-input-border: var(--color-cod-950);
 
     --color-ui-template-background: var(--color-cod-50);
@@ -36,13 +37,13 @@
     --color-ui-focus: var(--color-candlelight-500);
     --color-ui-focus-text: var(--color-cod-950);
 
-    --color-ui-error: var(--color-flush-600);
+    --color-ui-error: var(--color-flush-700);
     --color-ui-success: var(--color-salem-700);
     --color-ui-info: var(--color-prussian-700);
 
     --color-ui-hover: var(--color-cod-300);
 
-    --color-ui-brand: var(--color-cod-950);
+    --color-ui-brand: var(--color-prussian-700);
 
     --color-ui-surface-background: var(--color-cod-50);
     --color-ui-surface-text: var(--color-cod-950);
@@ -119,4 +120,9 @@
     --color-salem-800: oklch(0.4095 0.0841 162.13);
     --color-salem-900: oklch(0.3587 0.0697 164.35);
     --color-salem-950: oklch(0.2517 0.0467 166.53);
+}
+
+@keyframes drain {
+    from { margin-left: 0; width: 100%; }
+    to   { margin-left: 100%; width: 0; }
 }

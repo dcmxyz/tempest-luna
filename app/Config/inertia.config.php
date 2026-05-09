@@ -5,6 +5,6 @@ use Inertia\Configs\ValidationConfig;
 
 return new InertiaConfig(
     validation: new ValidationConfig(
-        localize_fields: false,
+        //localize_fields: false,
     ),
 );

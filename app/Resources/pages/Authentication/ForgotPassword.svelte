@@ -46,8 +46,8 @@
                     bind:value={form.email}
                 />
 
-                <Button type="submit" disabled={form.processing} class="mt-2">
-                    {form.processing ? 'Please wait…' : 'Email password reset link'}
+                <Button type="submit" loading={form.processing} class="mt-2">
+                    Email password reset link
                 </Button>
             </form>
 

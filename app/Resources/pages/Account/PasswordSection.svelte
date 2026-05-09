@@ -49,8 +49,8 @@
         bind:value={ form.password }
     />
 
-    <Button type="submit" disabled={ form.processing } class="mt-2">
-        { form.processing ? 'Please wait…' : 'Update password' }
+    <Button type="submit" loading={ form.processing } class="mt-2">
+        Update password
     </Button>
 
     {#if form.recentlySuccessful}

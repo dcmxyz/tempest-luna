@@ -45,8 +45,8 @@
                     bind:value={form.password}
                 />
 
-                <Button type="submit" disabled={form.processing} class="mt-2">
-                    {form.processing ? 'Please wait…' : 'Login'}
+                <Button type="submit" loading={form.processing} class="mt-2">
+                    Login
                 </Button>
             </form>
 

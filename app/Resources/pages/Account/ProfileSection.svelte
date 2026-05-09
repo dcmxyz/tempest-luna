@@ -38,8 +38,8 @@
                 </div>
             </div>
 
-            <Button type="submit" disabled={ nameForm.processing }>
-                { nameForm.processing ? 'Please wait…' : 'Update name' }
+            <Button type="submit" loading={ nameForm.processing }>
+                Update name
             </Button>
 
             {#if nameForm.recentlySuccessful}
@@ -75,8 +75,8 @@
                 bind:value={ emailForm.email }
             />
 
-            <Button type="submit" disabled={ emailForm.processing }>
-                { emailForm.processing ? 'Please wait…' : 'Update email' }
+            <Button type="submit" loading={ emailForm.processing }>
+                Update email
             </Button>
 
             {#if emailForm.recentlySuccessful}

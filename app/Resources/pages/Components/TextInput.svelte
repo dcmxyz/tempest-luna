@@ -73,7 +73,7 @@
             bind:value
             aria-describedby={describedBy}
             class={cm(
-                "w-full px-0.5 py-2 text-lg leading-none tracking-wide text-ui-text bg-white",
+                "w-full px-0.5 py-2 text-lg leading-none tracking-wide text-ui-text bg-white rounded-xs",
                 "border-2 border-ui-input-border",
                 "focus:outline-4 focus:outline-ui-focus focus:outline-offset-0",
                 error    ? "border-ui-error" : "",

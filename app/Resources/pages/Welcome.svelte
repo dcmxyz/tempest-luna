@@ -27,9 +27,9 @@
             <div class="flex flex-col sm:flex-row border border-ui-border">
                 <div class="flex-1 p-8 sm:p-12 flex flex-col justify-between gap-10 border-b sm:border-b-0 sm:border-r border-ui-border">
                     <div>
-                        <h1 class="text-4xl sm:text-5xl leading-none tracking-tight text-ui-text mb-6 font-serif">
+                        <h1 class="text-4xl sm:text-5xl leading-none tracking-tight text-ui-text mb-6">
                             <span class="font-black">Luna</span><br>
-                            <span class="font-extralight">Starter Kit</span>
+                            <span class="font-extralight font-serif">Starter Kit</span>
                         </h1>
 
                         <p class="text-ui-secondary-text max-w-xs">
