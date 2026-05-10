@@ -14,7 +14,7 @@
 
 <Base {title}>
     {@render header?.()}
-    <main class="overflow-y-scroll w-full h-full flex p-8">
+    <main class="overflow-y-scroll w-full h-full flex px-8 py-4">
         {@render children?.()}
     </main>
 </Base>
