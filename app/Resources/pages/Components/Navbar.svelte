@@ -19,8 +19,8 @@
                 variant="no-visited"
                 class={
                 uriIs('/')
-                    ? 'border-l-4 border-ui-link-border bg-ui-link-border/10 transition-colors no-underline'
-                    : 'border-l-4 border-transparent hover:border-ui-link-border transition-colors no-underline'
+                    ? 'border-l-4 py-2.5 px-4 border-ui-link-border bg-ui-link-border/10 transition-colors no-underline'
+                    : 'border-l-4 py-2.5 px-4 border-transparent hover:border-ui-link-border transition-colors no-underline'
                 }
             >
                 Welcome
@@ -31,8 +31,8 @@
                 variant="no-visited"
                 class={
                     uriIs('/dashboard')
-                        ? 'border-l-4 border-ui-link-border bg-ui-link-border/10 transition-colors no-underline'
-                        : 'border-l-4 border-transparent hover:border-ui-link-border transition-colors no-underline'
+                        ? 'border-l-4 py-2.5 px-4 border-ui-link-border bg-ui-link-border/10 transition-colors no-underline'
+                        : 'border-l-4 py-2.5 px-4 border-transparent hover:border-ui-link-border transition-colors no-underline'
                 }
             >
                 Dashboard
@@ -45,8 +45,8 @@
                 variant="no-visited"
                 class={
                     uriIs('/account*')
-                        ? 'border-l-4 border-ui-link-border bg-ui-link-border/10 transition-colors no-underline'
-                        : 'border-l-4 border-transparent hover:border-ui-link-border transition-colors no-underline'
+                        ? 'border-l-4 py-2.5 px-4 border-ui-link-border bg-ui-link-border/10 transition-colors no-underline'
+                        : 'border-l-4 py-2.5 px-4 border-transparent hover:border-ui-link-border transition-colors no-underline'
                 }
             >
                 <div class="flex">
@@ -59,7 +59,7 @@
                 href={ uri('/logout') }
                 inertiaProps={{ method: 'post' }}
                 variant="no-visited"
-                class="border-l-4 border-transparent hover:border-ui-link-border transition-colors no-underline"
+                class="border-l-4 py-2.5 px-4 border-transparent hover:border-ui-link-border transition-colors no-underline"
             >
                 Logout
             </Link>
@@ -69,8 +69,8 @@
                 variant="no-visited"
                 class={
                 uriIs('/')
-                    ? 'border-l-4 border-ui-link-border bg-ui-link-border/10 transition-colors no-underline'
-                    : 'border-l-4 border-transparent hover:border-ui-link-border transition-colors no-underline'
+                    ? 'border-l-4 py-2.5 px-4 border-ui-link-border bg-ui-link-border/10 transition-colors no-underline'
+                    : 'border-l-4 py-2.5 px-4 border-transparent hover:border-ui-link-border transition-colors no-underline'
                 }
             >
                 Welcome
@@ -81,7 +81,7 @@
             <Link
                 href={ uri('/login') }
                 variant="no-visited"
-                class="border-l-4 border-transparent hover:border-ui-link-border transition-colors no-underline"
+                class="border-l-4 py-2.5 px-4 border-transparent hover:border-ui-link-border transition-colors no-underline"
             >
                 Log in
             </Link>
@@ -89,7 +89,7 @@
             <Link
                 href={ uri('/register') }
                 variant="no-visited"
-                class="border-l-4 border-transparent hover:border-ui-link-border transition-colors no-underline"
+                class="border-l-4 py-2.5 px-4 border-transparent hover:border-ui-link-border transition-colors no-underline"
             >
                 Create an account
             </Link>
