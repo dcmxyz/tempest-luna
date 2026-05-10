@@ -26,7 +26,7 @@
         <div class="w-full max-w-2xl flex flex-col gap-4">
             <div>
                 <div class="grid grid-cols-10 gap-4 flex-1">
-                    {#each Array.from({ length: 10 }, () => Math.random() < 0.2) as brand}
+                    {#each Array.from({ length: 20 }, () => Math.random() < 0.2) as brand}
                         <div class="col-span-1 border p-6 {brand ? 'bg-ui-brand border-ui-brand/20' : 'bg-ui-surface-background border-ui-surface-border opacity-50'}">
                             <div class="bg-ui-surface-background"></div>
                         </div>
@@ -77,7 +77,7 @@
             </div>
             <div class="flex-1">
                 <div class="grid grid-cols-10 gap-4 h-full">
-                    {#each Array.from({ length: 36 }, () => Math.random() < 0.15) as brand}
+                    {#each Array.from({ length: 30 }, () => Math.random() < 0.15) as brand}
                         <div class="col-span-1 border p-6 {brand ? 'bg-ui-brand border-ui-brand/20' : 'bg-ui-surface-background border-ui-surface-border opacity-50'}">
                         </div>
                     {/each}
