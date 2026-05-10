@@ -20,7 +20,7 @@
 
         <x-vite-tags />
     </head>
-    <body class="h-dvh w-full text-ui-text p-4 antialiased">
+    <body class="h-dvh w-full text-ui-text p-4 antialiased overflow-hidden">
         <x-inertia-app />
     </body>
 </html>

@@ -7,7 +7,7 @@
     const firstName = $derived(auth.user?.name?.split(' ')[0])
 </script>
 
-<header class="border-r border-ui-surface-border w-72 h-full justify-between flex flex-col">
+<header class="border-r border-ui-surface-border w-60 h-full flex flex-col">
     <div class="p-4">
         <span class="font-mono text-xl font-black leading-none text-ui-text">Luna</span>
     </div>
@@ -50,7 +50,7 @@
                 }
             >
                 <div class="flex">
-                    <span class="mr-2"><UserAvatar name={auth.user?.name} size={18} /></span>
+                    <span class="mr-2.5"><UserAvatar name={auth.user?.name} size={18} /></span>
                     {firstName ?? ''}
                 </div>
             </Link>
