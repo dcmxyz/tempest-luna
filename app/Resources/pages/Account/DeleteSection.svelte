@@ -17,6 +17,7 @@
 
 <div class="flex flex-col gap-6 pb-12">
     {#if !confirming}
+        <h3 class="text-lg font-bold leading-none text-ui-text">Delete your account</h3>
         <Button variant="danger" onclick={() => confirming = true}>
             Delete account
         </Button>

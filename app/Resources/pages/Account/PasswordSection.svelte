@@ -27,6 +27,7 @@
     }
 </script>
 
+<h3 class="text-lg font-bold leading-none text-ui-text">Change your password</h3>
 <form onsubmit={ submit } class="flex flex-col gap-6">
     <TextInput
         id="current_password"

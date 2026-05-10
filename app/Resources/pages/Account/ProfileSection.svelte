@@ -18,7 +18,8 @@
     }
 </script>
 
-<div class="flex flex-col gap-12">
+<div class="flex flex-col gap-8">
+    <h3 class="text-lg font-bold leading-none text-ui-text">Change your name</h3>
     <div>
         <form onsubmit={ (e) => submit(e, nameForm) } class="flex flex-col gap-3">
             <div class="flex items-center">
@@ -50,6 +51,7 @@
 
     <div class="border-t border-ui-border"></div>
 
+    <h3 class="text-lg font-bold leading-none text-ui-text">Change your email</h3>
     <div>
         {#if !emailVerified}
             <NotificationBanner

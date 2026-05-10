@@ -20,11 +20,14 @@
         <Navbar />
     {/snippet}
 
-    <div class="flex flex-col gap-12 max-w-2xl">
+    <div class="flex flex-col gap-8 max-w-2xl">
+        <h2 class="text-xl font-black leading-none text-ui-text pb-1.5">Your account</h2>
         <ProfileSection />
         <div class="border-t border-ui-border"></div>
+        <h2 class="text-xl font-black leading-none text-ui-text pb-1.5">Security</h2>
         <PasswordSection />
         <div class="border-t border-ui-border"></div>
+        <h2 class="text-xl font-black leading-none text-ui-text pb-1.5">Privacy</h2>
         <DeleteSection />
     </div>
 </App>
