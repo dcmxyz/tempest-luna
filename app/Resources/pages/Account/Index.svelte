@@ -20,7 +20,7 @@
         <Navbar />
     {/snippet}
 
-    <div class="flex flex-col gap-12 pt-8 max-w-2xl">
+    <div class="flex flex-col gap-12 max-w-2xl">
         <ProfileSection />
         <div class="border-t border-ui-border"></div>
         <PasswordSection />

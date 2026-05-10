@@ -5,7 +5,7 @@
     import type { Uri } from '@route';
 
     const link = tv({
-        base: "text-lg leading-none py-0.5 transition-colors focus:outline-none focus:bg-ui-focus focus:text-ui-focus-text underline-offset-2 decoration-1 hover:underline-offset-4 hover:decoration-2 focus:decoration-3",
+        base: "text-lg transition leading-none py-2.5 px-4 focus:outline-none focus:bg-ui-focus focus:text-ui-focus-text underline-offset-2 decoration-1 hover:underline-offset-4 hover:decoration-2 focus:decoration-3",
         variants: {
             variant: {
                 link: "underline text-ui-link hover:text-ui-link-hover visited:text-ui-link-visited active:text-ui-link-active",

@@ -22,8 +22,17 @@
         <Navbar />
     {/snippet}
 
-    <div class="flex-1 flex items-center justify-center">
+    <div class="flex-1 flex justify-center">
         <div class="w-full max-w-3xl flex flex-col gap-4">
+            <div>
+                <div class="grid grid-cols-12 gap-4 flex-1">
+                    {#each Array.from({ length: 12 }, () => Math.random() < 0.2) as brand}
+                        <div class="col-span-1 border p-6 {brand ? 'bg-ui-brand border-ui-brand/20' : 'bg-ui-surface-background border-ui-surface-border opacity-50'}">
+                            <div class="bg-ui-surface-background"></div>
+                        </div>
+                    {/each}
+                </div>
+            </div>
             <div class="flex flex-col sm:flex-row border border-ui-border">
                 <div class="flex-1 p-8 sm:p-12 flex flex-col justify-between gap-10 border-b sm:border-b-0 sm:border-r border-ui-border">
                     <div>
@@ -64,6 +73,14 @@
                         <circle cx="85" cy="80" r="34" fill="var(--color-cod-100)"/>
                         <circle cx="110" cy="75" r="32" fill="var(--color-ui-brand)"/>
                     </svg>
+                </div>
+            </div>
+            <div class="flex-1">
+                <div class="grid grid-cols-12 gap-4 h-full">
+                    {#each Array.from({ length: 36 }, () => Math.random() < 0.15) as brand}
+                        <div class="col-span-1 border p-6 {brand ? 'bg-ui-brand border-ui-brand/20' : 'bg-ui-surface-background border-ui-surface-border opacity-50'}">
+                        </div>
+                    {/each}
                 </div>
             </div>
         </div>
