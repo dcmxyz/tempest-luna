@@ -2,3 +2,6 @@ validation_error:
     unique: |
         .input {$field :string}
         {$field} is already taken
+    fail_with_message: |
+        .input {$field :string}
+        {$field} is invalid
