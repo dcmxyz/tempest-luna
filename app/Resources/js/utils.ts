@@ -18,5 +18,10 @@ export function cast<T>(value: unknown): T {
     return value as T;
 }
 
+export function ucFirst(string: string):string {
+    if (!string) return '';
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 export const normalizeText = (text: string): string =>
     text?.toLowerCase().replace(/\s/g, "") || "";

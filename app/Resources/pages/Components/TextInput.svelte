@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { cm } from "@utils";
+    import { cm, ucFirst } from "@utils";
     import type { HTMLInputAttributes } from 'svelte/elements';
     import { Button } from "@components";
 
@@ -58,7 +58,7 @@
     {#if error}
         <p id={errorId} class="text-base leading-none text-ui-error">
             <span class="sr-only">Error:</span>
-            {error}
+            {ucFirst(error)}
         </p>
     {/if}
 

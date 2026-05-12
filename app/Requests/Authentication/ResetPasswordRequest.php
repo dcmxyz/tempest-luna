@@ -8,7 +8,6 @@ use Tempest\Http\IsRequest;
 use Tempest\Http\Request;
 use Tempest\Validation\Rules\IsNotEmptyString;
 use Tempest\Validation\Rules\IsPassword;
-use Tempest\Validation\TranslationKey;
 
 final class ResetPasswordRequest implements Request
 {
@@ -17,7 +16,6 @@ final class ResetPasswordRequest implements Request
     #[IsNotEmptyString]
     public string $token;
 
-    #[TranslationKey('register_password_confirmation')]
     #[IsPassword(min: 12, mixedCase: true, numbers: true)]
     public string $password;
 }
