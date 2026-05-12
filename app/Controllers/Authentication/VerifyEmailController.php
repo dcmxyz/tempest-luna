@@ -9,6 +9,8 @@ use App\Middleware\MustBeAuthenticated;
 use App\Models\User;
 use App\Services\AuthService;
 use Tempest\Auth\Authentication\Authenticator;
+use Tempest\Cache\Cache;
+use Tempest\DateTime\Duration;
 use Tempest\Http\Request;
 use Tempest\Http\Responses\Redirect;
 use Tempest\Router\Get;
@@ -22,6 +24,7 @@ final readonly class VerifyEmailController
     public function __construct(
         private AuthService $authService,
         private Authenticator $authenticator,
+        private Cache $cache,
         private UriGenerator $uriGenerator,
     ) {}
 
@@ -50,7 +53,16 @@ final readonly class VerifyEmailController
     #[Post('/account/email/verify/resend', middleware: [MustBeAuthenticated::class])]
     public function resend(): Redirect
     {
-        $this->authService->sendVerificationEmail($this->authenticator->current());
+        $authenticated = $this->authenticator->current();
+        $cacheKey = 'email-verification-sent-' . md5((string) $authenticated->id);
+
+        if ($this->cache->get($cacheKey) !== null) {
+            return new Redirect(uri([AccountController::class, 'index']));
+        }
+
+        $this->cache->put($cacheKey, true, Duration::seconds(30));
+
+        $this->authService->sendVerificationEmail($authenticated);
 
         return new Redirect(uri([AccountController::class, 'index']));
     }
