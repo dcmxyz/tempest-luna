@@ -6,12 +6,12 @@
     import type { Uri } from '@route';
 
     const button = tv({
-        base: "inline-block border-2 bg-white px-3 py-1.5 font-semibold focus:outline-0 rounded-xs",
+        base: "inline-block border-2 bg-white px-3 py-1.5 font-semibold rounded-xs hover:bg-ui-focus focus:bg-ui-focus focus:outline-0 focus:ring-2 focus:ring-ui-focus cursor-pointer",
         variants: {
             variant: {
-                primary: "border-ui-button text-ui-text shadow-[4px_4px_0_0] hover:bg-ui-focus focus:ring-2 focus:ring-ui-focus",
-                secondary: "border-ui-button text-ui-text hover:bg-ui-focus focus:ring-2 focus:ring-ui-focus",
-                danger: "border-ui-button-danger text-ui-button-danger-shade shadow-[4px_4px_0_0] shadow-ui-button-danger hover:bg-ui-focus focus:ring-2 focus:ring-ui-focus",
+                primary: "border-ui-button text-ui-text shadow-[4px_4px_0_0]",
+                secondary: "border-ui-button text-ui-text",
+                danger: "border-ui-button-danger text-ui-button-danger-shade shadow-[4px_4px_0_0] shadow-ui-button-danger",
             },
             disabled: {
                 true: "opacity-80 cursor-not-allowed pointer-events-none",
