@@ -7,6 +7,7 @@ namespace App\Models;
 use App\Models\Traits\HasTimestamps;
 use SensitiveParameter;
 use Tempest\Auth\Authentication\Authenticatable;
+use Tempest\Database\HasMany;
 use Tempest\Database\IsDatabaseModel;
 use Tempest\Database\PrimaryKey;
 use Tempest\Database\Uuid;
@@ -20,6 +21,10 @@ final class User implements Authenticatable
 
     #[Uuid]
     public PrimaryKey $id;
+
+    /** @var \App\Models\Session[] */
+    #[HasMany(ownerJoin: 'sessions.user_id', relationJoin: 'users.id')]
+    public array $sessions = [];
 
     public function __construct(
         public string $name,
