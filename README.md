@@ -3,11 +3,11 @@ A starter kit for [Tempest PHP](https://tempestphp.com) using Inertia and Svelte
 
 ---
 
-> [!WARNING]
-> This project is not production-ready (Tempest is not yet stable), but you can use it as a starting point for your own projects.
+> [!NOTE]
+> This project is not production-ready (and tempest itself is not yet stable), but you can use it as a starting point for your own projects.
 
 > [!NOTE]
-> This is a work in progress.
+> This is a work in progress. It already works, but there are still some things missing.
 
 ---
 
@@ -31,33 +31,53 @@ A starter kit for [Tempest PHP](https://tempestphp.com) using Inertia and Svelte
 ## Included
 
 - **Welcome Page**
+- **Dashboard Skeleton Page**
 - **Authentication**
   - Create an account
   - Sign in
+  - Remember me
   - Reset password via email
   - Remember me
+- **Profile Page**
+  - Change name
+  - Change email
+  - Email verification
+  - Update password
+  - Delete account
+  - Recent sessions with `Log out of all other devices` functionality
 - **Session management**
-  - custom database-backed session manager with encrypted payload, IP address and user agent tracking
-- **Middleware**
+  - Custom database-backed session manager with encrypted payload, IP address and user agent tracking
+- **Useful Middlewares**
   - `MustBeAuthenticated`
   - `RedirectIfAuthenticated`
-- **Validation**
-  - custom `Unique` rule
+  - `MustHaveVerifiedEmail`
+- **Extra Validation Rules**
+  - `Unique` Rule
+  - `FailWithMessage` Generic Rule (works partially, call via function `fail_validation`)
 - **View layouts**
   - `Base`
   - `App`
   - `Auth`
 - **Routes**
-  - lightweight `uri()` helper inspired by Ziggy.
-    - Builds type-safe URLs from a Tempest route manifest with param substitution, query string support and `uriIs()` for active path matching
+  - Lightweight `uri()` helper inspired by Ziggy. Builds type-safe URLs from a Tempest route manifest with param substitution, query string support and `uriIs()` for active path matching
+- **Svelte components**
+  - Alert
+  - Badge
+  - Button
+  - Link
+  - Navbar
+  - NotificationBanner
+  - TextInput
+  - UserAvatar
+
 ---
 
 ## Requirements
 
 - PHP 8.5+
 - Composer
-- PostgreSQL
-- Node.js + Bun (or npm)
+- PostgreSQL, MySQL or SQLite
+- Node.js + Bun (or NPM, or PNPM, or Yarn, or whatever you like to use)
 
 ---
 
@@ -67,7 +87,15 @@ A starter kit for [Tempest PHP](https://tempestphp.com) using Inertia and Svelte
 git clone https://github.com/dcmxyz/tempest-luna my-project
 
 cd my-project
+```
 
+```bash
+rm -rf .git
+
+git init
+```
+
+```bash
 cp .env.example .env
 ```
 
@@ -75,6 +103,8 @@ cp .env.example .env
 composer install
 
 bun install
+# or
+npm install
 ```
 
 ```bash
@@ -93,5 +123,5 @@ npm run dev
 
 ## Notes
 
-- No database-level foreign key constraints, relationships are managed in application code
-- The route manifest (`.tempest/typescript/routes.ts`) is auto-generated on dev start and on every controller file change via the `tempestRoutes` Vite plugin
+- No database-level foreign key constraints
+- The route manifest (`.tempest/generated/routes.ts`) is auto-generated on dev start and on every controller file change via the `tempestRoutes` Vite plugin
