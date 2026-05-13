@@ -2,12 +2,15 @@
 
 namespace App\Models;
 
+use Tempest\Database\IsDatabaseModel;
 use Tempest\Database\PrimaryKey;
 use Tempest\Database\Uuid;
 use Tempest\DateTime\DateTime;
 
 final class Session
 {
+    use IsDatabaseModel;
+
     #[Uuid]
     public PrimaryKey $id;
 
