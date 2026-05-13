@@ -24,7 +24,7 @@ A starter kit for [Tempest PHP](https://tempestphp.com) using Inertia and Svelte
 | Frontend  | [Svelte 5](https://svelte.dev) + [Inertia.js](https://inertiajs.com)         |
 | Language  | PHP 8.5+                                                                     |
 | Build     | Vite + Tailwind CSS v4 + vite-plugin-tempest                                 |
-| Database  | PostgreSQL                                                                   |
+| Database  | PostgreSQL, MySQL, or SQLite                                                 |
 
 ---
 
@@ -40,6 +40,7 @@ A starter kit for [Tempest PHP](https://tempestphp.com) using Inertia and Svelte
   - Remember me
 - **Profile Page**
   - Change name
+    - Avatar auto-generated from name
   - Change email
   - Email verification
   - Update password
