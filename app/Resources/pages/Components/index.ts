@@ -5,3 +5,4 @@ export { default as NotificationBanner } from './NotificationBanner.svelte';
 export { default as Navbar } from './Navbar.svelte';
 export { default as UserAvatar } from './UserAvatar.svelte';
 export { default as Alert } from './Alert.svelte';
+export { default as Badge } from './Badge.svelte';
