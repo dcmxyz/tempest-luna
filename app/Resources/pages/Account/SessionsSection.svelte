@@ -19,7 +19,7 @@
         {#if userSessions.length > 1}
             <Link
                 href={ uri('/account/sessions/logout') }
-                inertiaProps={{ method: 'post' }}
+                inertiaProps={{ method: 'post', preserveState: false }}
                 variant="no-visited"
             >
                 Log out of all other devices

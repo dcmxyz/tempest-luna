@@ -153,7 +153,7 @@ final readonly class AccountController
     }
 
     #[Post(uri: '/account/sessions/logout', middleware: [MustBeAuthenticated::class])]
-    public function logoutAllSessions(): \Tempest\Http\Response
+    public function logoutAllSessions(): Response|ResponseFactory|Redirect
     {
         $user = $this->authenticator->current();
         $user?->load('sessions');
