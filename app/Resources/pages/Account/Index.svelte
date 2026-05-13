@@ -5,6 +5,7 @@
     import ProfileSection from '@pages/Account/ProfileSection.svelte'
     import PasswordSection from '@pages/Account/PasswordSection.svelte'
     import DeleteSection from '@pages/Account/DeleteSection.svelte'
+    import SessionsSection from "@pages/Account/SessionsSection.svelte";
 
     interface Props {
         [key: string]: any
@@ -26,6 +27,8 @@
         <div class="border-t border-ui-border"></div>
         <h2 class="text-xl font-black leading-none text-ui-text pb-1.5">Security</h2>
         <PasswordSection />
+        <div class="border-t border-ui-border"></div>
+        <SessionsSection />
         <div class="border-t border-ui-border"></div>
         <h2 class="text-xl font-black leading-none text-ui-text pb-1.5">Privacy</h2>
         <DeleteSection />
