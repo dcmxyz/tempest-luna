@@ -24,5 +24,7 @@
     <env name="ENVIRONMENT" value="testing" />
     <env name="BASE_URI" value="" />
     <env name="CACHE" value="null" />
+    <env name="SIGNING_KEY" value="11Qj/pM9Uc7HJWV5Jsekv+G8s/K6i55dlFFbr9Cz0Fo=" />
+    <env name="DATABASE_PERSISTENT" value="false" />
   </php>
 </phpunit>
