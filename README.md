@@ -133,9 +133,7 @@ bun run dev   # or npm run dev, or pnpm run dev, etc...
 ---
 (Build the frontend for production:)
 ```bash
-bun run build
-# or
-npm run build
+bun run build   # or npm run build, or pnpm run build, etc...
 ```
 ---
 
