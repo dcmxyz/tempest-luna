@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "faa3b7133139044712c9e07542f0a92a",
+    "content-hash": "d5481192a489b8b3b849b98017063f40",
     "packages": [
         {
             "name": "composer/semver",
@@ -1461,7 +1461,7 @@
         },
         {
             "name": "maartendekker/inertia-tempest",
-            "version": "4.x-dev",
+            "version": "v4.0.0-beta.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Maarten-Dekker/inertia-tempest.git",
@@ -1512,7 +1512,7 @@
             "description": "The Tempest adapter for Inertia.js.",
             "support": {
                 "issues": "https://github.com/Maarten-Dekker/inertia-tempest/issues",
-                "source": "https://github.com/Maarten-Dekker/inertia-tempest/tree/4.x"
+                "source": "https://github.com/Maarten-Dekker/inertia-tempest/tree/v4.0.0-beta.1"
             },
             "time": "2026-05-12T11:40:56+00:00"
         },
@@ -6544,9 +6544,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "maartendekker/inertia-tempest": 20
-    },
+    "stability-flags": {},
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
