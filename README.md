@@ -79,6 +79,7 @@ A starter kit for [Tempest PHP](https://tempestphp.com) using Inertia and Svelte
 - Composer
 - PostgreSQL, MySQL or SQLite
 - Node.js + Bun (or NPM, or PNPM, or Yarn, or whatever you like to use)
+- Mailpit (or similar) for emails
 
 ---
 
@@ -141,3 +142,4 @@ bun run build   # or npm run build, or pnpm run build, etc...
 
 - No database-level foreign key constraints
 - The route manifest (`.tempest/generated/routes.ts`) is auto-generated on dev start and on every controller file change via the `tempestRoutes` Vite plugin
+- Make sure Mailpit is running and configured in `.env`, otherwise you won't be able to send emails and may encounter errors.
