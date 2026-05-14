@@ -1465,18 +1465,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Maarten-Dekker/inertia-tempest.git",
-                "reference": "e299c1ed80c0ff6b502f693bec71d482bc234727"
+                "reference": "8f8e25982dee5c2c90d02279873de9860083be8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Maarten-Dekker/inertia-tempest/zipball/e299c1ed80c0ff6b502f693bec71d482bc234727",
-                "reference": "e299c1ed80c0ff6b502f693bec71d482bc234727",
+                "url": "https://api.github.com/repos/Maarten-Dekker/inertia-tempest/zipball/8f8e25982dee5c2c90d02279873de9860083be8a",
+                "reference": "8f8e25982dee5c2c90d02279873de9860083be8a",
                 "shasum": ""
             },
             "require": {
                 "ext-json": "*",
                 "php": "^8.5",
-                "tempest/framework": "^3.0"
+                "tempest/framework": "^3.10"
             },
             "conflict": {
                 "guzzlehttp/promises": "<2.0",
@@ -1484,13 +1484,13 @@
             },
             "require-dev": {
                 "brianium/paratest": "^7.19.1",
-                "carthage-software/mago": "1.8.0",
+                "carthage-software/mago": "1.25.2",
                 "ext-pdo_sqlite": "*",
                 "illuminate/pagination": "^13.0",
                 "mockery/mockery": "^1.6.12",
-                "phpunit/phpunit": "^12.5.11",
-                "rector/rector": "2.3.6",
-                "tempest/upgrade": "^3.0"
+                "phpunit/phpunit": "^13.1.8",
+                "rector/rector": "2.3.8",
+                "tempest/upgrade": "3.10"
             },
             "suggest": {
                 "ext-pcntl": "Recommended when running the Inertia SSR server via the `inertia:start-ssr` tempest command.",
@@ -1514,7 +1514,7 @@
                 "issues": "https://github.com/Maarten-Dekker/inertia-tempest/issues",
                 "source": "https://github.com/Maarten-Dekker/inertia-tempest/tree/4.x"
             },
-            "time": "2026-05-01T15:18:58+00:00"
+            "time": "2026-05-12T11:40:56+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1760,16 +1760,16 @@
         },
         {
             "name": "nette/utils",
-            "version": "v4.1.3",
+            "version": "v4.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/utils.git",
-                "reference": "bb3ea637e3d131d72acc033cfc2746ee893349fe"
+                "reference": "7da6c396d7ebe142bc857c20479d5e70a5e1aac7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/utils/zipball/bb3ea637e3d131d72acc033cfc2746ee893349fe",
-                "reference": "bb3ea637e3d131d72acc033cfc2746ee893349fe",
+                "url": "https://api.github.com/repos/nette/utils/zipball/7da6c396d7ebe142bc857c20479d5e70a5e1aac7",
+                "reference": "7da6c396d7ebe142bc857c20479d5e70a5e1aac7",
                 "shasum": ""
             },
             "require": {
@@ -1845,9 +1845,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nette/utils/issues",
-                "source": "https://github.com/nette/utils/tree/v4.1.3"
+                "source": "https://github.com/nette/utils/tree/v4.1.4"
             },
-            "time": "2026-02-13T03:05:33+00:00"
+            "time": "2026-05-11T20:49:54+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -3194,16 +3194,16 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v7.4.9",
+            "version": "v7.4.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "dcd8f96bcdc0f128ec406c765cc066c6035d1be3"
+                "reference": "d721ea61b4a5fba8c5b6e7c1feda19efea144b50"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/dcd8f96bcdc0f128ec406c765cc066c6035d1be3",
-                "reference": "dcd8f96bcdc0f128ec406c765cc066c6035d1be3",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/d721ea61b4a5fba8c5b6e7c1feda19efea144b50",
+                "reference": "d721ea61b4a5fba8c5b6e7c1feda19efea144b50",
                 "shasum": ""
             },
             "require": {
@@ -3240,7 +3240,7 @@
             "description": "Provides basic utilities for the filesystem",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/filesystem/tree/v7.4.9"
+                "source": "https://github.com/symfony/filesystem/tree/v7.4.11"
             },
             "funding": [
                 {
@@ -3260,7 +3260,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-04-18T13:18:21+00:00"
+            "time": "2026-05-11T16:38:44+00:00"
         },
         {
             "name": "symfony/mailer",
@@ -3941,16 +3941,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v7.4.8",
+            "version": "v7.4.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "60f19cd3badc8de688421e21e4305eba50f8089a"
+                "reference": "d9593c9efa40499eb078b81144de42cbc28a31f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/60f19cd3badc8de688421e21e4305eba50f8089a",
-                "reference": "60f19cd3badc8de688421e21e4305eba50f8089a",
+                "url": "https://api.github.com/repos/symfony/process/zipball/d9593c9efa40499eb078b81144de42cbc28a31f0",
+                "reference": "d9593c9efa40499eb078b81144de42cbc28a31f0",
                 "shasum": ""
             },
             "require": {
@@ -3982,7 +3982,7 @@
             "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/process/tree/v7.4.8"
+                "source": "https://github.com/symfony/process/tree/v7.4.11"
             },
             "funding": [
                 {
@@ -4002,7 +4002,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-03-24T13:12:05+00:00"
+            "time": "2026-05-11T16:55:21+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -4339,16 +4339,16 @@
         },
         {
             "name": "symfony/yaml",
-            "version": "v7.4.10",
+            "version": "v7.4.11",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/yaml.git",
-                "reference": "c660d6538545a3e8e65a5621ee3d7a6d352892c7"
+                "reference": "e2eb64a57763815ccae07ac1c7653d6cc1c326fd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/yaml/zipball/c660d6538545a3e8e65a5621ee3d7a6d352892c7",
-                "reference": "c660d6538545a3e8e65a5621ee3d7a6d352892c7",
+                "url": "https://api.github.com/repos/symfony/yaml/zipball/e2eb64a57763815ccae07ac1c7653d6cc1c326fd",
+                "reference": "e2eb64a57763815ccae07ac1c7653d6cc1c326fd",
                 "shasum": ""
             },
             "require": {
@@ -4391,7 +4391,7 @@
             "description": "Loads and dumps YAML files",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/yaml/tree/v7.4.10"
+                "source": "https://github.com/symfony/yaml/tree/v7.4.11"
             },
             "funding": [
                 {
@@ -4411,7 +4411,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-05T08:01:55+00:00"
+            "time": "2026-05-13T12:04:42+00:00"
         },
         {
             "name": "tempest/framework",
@@ -4653,16 +4653,16 @@
         },
         {
             "name": "tempest/highlight",
-            "version": "2.22.0",
+            "version": "2.24.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/tempestphp/highlight.git",
-                "reference": "b966e3d747888e94990934533d8ca4c368f667a9"
+                "reference": "fe0107137025b90260aee80128cc4e46071541ff"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tempestphp/highlight/zipball/b966e3d747888e94990934533d8ca4c368f667a9",
-                "reference": "b966e3d747888e94990934533d8ca4c368f667a9",
+                "url": "https://api.github.com/repos/tempestphp/highlight/zipball/fe0107137025b90260aee80128cc4e46071541ff",
+                "reference": "fe0107137025b90260aee80128cc4e46071541ff",
                 "shasum": ""
             },
             "require": {
@@ -4700,7 +4700,7 @@
             "description": "Fast, extensible, server-side code highlighting",
             "support": {
                 "issues": "https://github.com/tempestphp/highlight/issues",
-                "source": "https://github.com/tempestphp/highlight/tree/2.22.0"
+                "source": "https://github.com/tempestphp/highlight/tree/2.24.0"
             },
             "funding": [
                 {
@@ -4708,7 +4708,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-04-21T06:27:04+00:00"
+            "time": "2026-05-13T12:25:45+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -4872,16 +4872,16 @@
     "packages-dev": [
         {
             "name": "carthage-software/mago",
-            "version": "1.26.0",
+            "version": "1.27.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/carthage-software/mago.git",
-                "reference": "9ae2f7ad58ffeeaa2ff890e736a8658f8e397cdf"
+                "reference": "f4c31bbcb871e6bcbb96323ce791e06288b39b2a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/carthage-software/mago/zipball/9ae2f7ad58ffeeaa2ff890e736a8658f8e397cdf",
-                "reference": "9ae2f7ad58ffeeaa2ff890e736a8658f8e397cdf",
+                "url": "https://api.github.com/repos/carthage-software/mago/zipball/f4c31bbcb871e6bcbb96323ce791e06288b39b2a",
+                "reference": "f4c31bbcb871e6bcbb96323ce791e06288b39b2a",
                 "shasum": ""
             },
             "require": {
@@ -4896,9 +4896,12 @@
             "type": "library",
             "autoload": {
                 "files": [
-                    "composer/functions.php",
-                    "composer/internal.php"
-                ]
+                    "composer/src/functions.php",
+                    "composer/src/internal.php"
+                ],
+                "psr-4": {
+                    "Mago\\": "composer/src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -4916,7 +4919,7 @@
             ],
             "support": {
                 "issues": "https://github.com/carthage-software/mago/issues",
-                "source": "https://github.com/carthage-software/mago/tree/1.26.0"
+                "source": "https://github.com/carthage-software/mago/tree/1.27.1"
             },
             "funding": [
                 {
@@ -4924,7 +4927,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-05-06T21:44:02+00:00"
+            "time": "2026-05-13T15:32:36+00:00"
         },
         {
             "name": "myclabs/deep-copy",
@@ -5451,16 +5454,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "12.5.24",
+            "version": "12.5.25",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "d75dd30597caa80e72fad2ef7904601a30ef1046"
+                "reference": "792c2980442dfce319226b88fa845b8b6de3b333"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/d75dd30597caa80e72fad2ef7904601a30ef1046",
-                "reference": "d75dd30597caa80e72fad2ef7904601a30ef1046",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/792c2980442dfce319226b88fa845b8b6de3b333",
+                "reference": "792c2980442dfce319226b88fa845b8b6de3b333",
                 "shasum": ""
             },
             "require": {
@@ -5529,7 +5532,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/12.5.24"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/12.5.25"
             },
             "funding": [
                 {
@@ -5537,7 +5540,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-05-01T04:21:04+00:00"
+            "time": "2026-05-13T03:56:57+00:00"
         },
         {
             "name": "sebastian/cli-parser",
