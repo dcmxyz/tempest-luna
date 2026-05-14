@@ -18,7 +18,9 @@ use function Tempest\Router\uri;
 #[SkipDiscovery]
 final readonly class MustHaveVerifiedEmail implements HttpMiddleware
 {
-    public function __construct(private Authenticator $authenticator) {}
+    public function __construct(
+        private Authenticator $authenticator,
+    ) {}
 
     public function __invoke(Request $request, HttpMiddlewareCallable $next): Response
     {

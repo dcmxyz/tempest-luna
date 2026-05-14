@@ -136,7 +136,7 @@ final readonly class AccountController
         $user?->load('sessions');
 
         $sessions = arr($user?->sessions)
-            ->sortByCallback(static fn(Session $session) => $session->last_active_at->getTimestamp())
+            ->sortByCallback(static fn (Session $session) => $session->last_active_at->getTimestamp())
             ->slice(0, 6)
             ->map(function (Session $session) {
                 return [

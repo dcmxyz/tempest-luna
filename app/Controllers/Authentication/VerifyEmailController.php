@@ -15,8 +15,8 @@ use Tempest\Http\Request;
 use Tempest\Http\Responses\Redirect;
 use Tempest\Router\Get;
 use Tempest\Router\Post;
-
 use Tempest\Router\UriGenerator;
+
 use function Tempest\Router\uri;
 
 final readonly class VerifyEmailController

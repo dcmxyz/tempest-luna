@@ -28,15 +28,15 @@ function parse_user_agent(string $userAgent): string
     $device = 'Desktop';
 
     $browsers = [
-        'Edg'            => 'Edge',
-        'OPR'            => 'Opera',
-        'Opera'          => 'Opera',
+        'Edg' => 'Edge',
+        'OPR' => 'Opera',
+        'Opera' => 'Opera',
         'SamsungBrowser' => 'Samsung Browser',
-        'Chrome'         => 'Chrome',
-        'Firefox'        => 'Firefox',
-        'Safari'         => 'Safari',
-        'MSIE'           => 'Internet Explorer',
-        'Trident'        => 'Internet Explorer',
+        'Chrome' => 'Chrome',
+        'Firefox' => 'Firefox',
+        'Safari' => 'Safari',
+        'MSIE' => 'Internet Explorer',
+        'Trident' => 'Internet Explorer',
     ];
 
     foreach ($browsers as $token => $name) {
@@ -48,11 +48,11 @@ function parse_user_agent(string $userAgent): string
 
     $operatingSystems = [
         'Macintosh' => 'macOS',
-        'iPhone'    => 'iOS',
-        'iPad'      => 'iPadOS',
-        'Android'   => 'Android',
-        'Linux'     => 'Linux',
-        'Windows'   => 'Windows',
+        'iPhone' => 'iOS',
+        'iPad' => 'iPadOS',
+        'Android' => 'Android',
+        'Linux' => 'Linux',
+        'Windows' => 'Windows',
     ];
 
     foreach ($operatingSystems as $token => $name) {
@@ -62,7 +62,10 @@ function parse_user_agent(string $userAgent): string
         }
     }
 
-    if (str_contains($userAgent, 'Mobi') || (str_contains($userAgent, 'Android') && !str_contains($userAgent, 'Tablet'))) {
+    if (
+        str_contains($userAgent, 'Mobi')
+        || str_contains($userAgent, 'Android') && ! str_contains($userAgent, 'Tablet')
+    ) {
         $device = 'Mobile';
     } elseif (str_contains($userAgent, 'iPad') || str_contains($userAgent, 'Tablet')) {
         $device = 'Tablet';

@@ -34,5 +34,5 @@ return match (env('DATABASE_CONFIG', default: 'sqlite')) {
     'sqlite' => $sqliteConfig,
     'pgsql' => $pgsqlConfig,
     'mysql' => $mysqlConfig,
-    default => throw new InvalidArgumentException('Only the "sqlite", "pgsql" and "mysql" configs are supported.')
+    default => throw new InvalidArgumentException('Only the "sqlite", "pgsql" and "mysql" configs are supported.'),
 };
