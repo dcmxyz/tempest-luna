@@ -26,6 +26,10 @@ final class User implements Authenticatable
     #[HasMany(ownerJoin: 'sessions.user_id', relationJoin: 'users.id')]
     public array $sessions = [];
 
+    public ?DateTime $email_verified_at = null;
+
+    public ?DateTime $two_factor_confirmed_at = null;
+
     public function __construct(
         public string $name,
 
@@ -42,9 +46,5 @@ final class User implements Authenticatable
 
         #[SensitiveParameter, Hidden]
         public ?string $two_factor_recovery_codes = null,
-
-        public ?DateTime $two_factor_confirmed_at = null,
-
-        public ?DateTime $email_verified_at = null,
     ) {}
 }
