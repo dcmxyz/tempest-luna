@@ -78,7 +78,7 @@ A starter kit for [Tempest PHP](https://tempestphp.com) using Inertia and Svelte
 - PHP 8.5+
 - Composer
 - PostgreSQL, MySQL or SQLite (default)
-- Node.js + Bun (or NPM, or PNPM, or Yarn, or whatever you like to use)
+- Node.js + PNPM (or NPM, or Yarn, or whatever you like to use)
 - Mailpit (or similar) for emails
 
 ---
@@ -111,7 +111,7 @@ Install the dependencies:
 composer install
 ```
 ```bash
-bun install   # or npm install, or pnpm install, etc...
+pnpm install   # or npm install, etc...
 ```
 
 Generate the application key and run the migrations:
@@ -129,12 +129,12 @@ php tempest serve
 
 Run the development server (Svelte / Frontend):
 ```bash
-bun run dev   # or npm run dev, or pnpm run dev, etc...
+pnpm run dev   # or npm run dev, etc...
 ```
 ---
 (Build the frontend for production:)
 ```bash
-bun run build   # or npm run build, or pnpm run build, etc...
+pnpm run build   # or npm run build, etc...
 ```
 ---
 
