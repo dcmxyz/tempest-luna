@@ -84,42 +84,59 @@ A starter kit for [Tempest PHP](https://tempestphp.com) using Inertia and Svelte
 
 ## Getting started
 
+Clone the repository:
 ```bash
 git clone https://github.com/dcmxyz/tempest-luna my-project
-
+```
+```bash
 cd my-project
 ```
 
+Initialize a new Git repository:
 ```bash
 rm -rf .git
-
+```
+```bash
 git init
 ```
 
+Copy the `.env.example` file to `.env` and fill in the required values:
 ```bash
 cp .env.example .env
 ```
 
+Install the dependencies:
 ```bash
 composer install
-
-bun install
-# or
-npm install
+```
+```bash
+bun install   # or npm install, or pnpm install, etc...
 ```
 
+Generate the application key and run the migrations:
 ```bash
 php tempest key:generate
-
+```
+```bash
 php tempest migrate:up
 ```
 
+Run the development server (PHP / Tempest):
 ```bash
-bun run dev
-# or
-npm run dev
+php tempest serve
 ```
 
+Run the development server (Svelte / Frontend):
+```bash
+bun run dev   # or npm run dev, or pnpm run dev, etc...
+```
+---
+(Build the frontend for production:)
+```bash
+bun run build
+# or
+npm run build
+```
 ---
 
 ## Notes
