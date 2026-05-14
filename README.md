@@ -17,14 +17,14 @@ A starter kit for [Tempest PHP](https://tempestphp.com) using Inertia and Svelte
 
 ## Stack
 
-| Layer     | Technology                                                                   |
-|-----------|------------------------------------------------------------------------------|
-| Framework | [Tempest PHP](https://tempestphp.com) 3.x+                                   |
-| Bridge    | [inertia-tempest](https://github.com/Maarten-Dekker/inertia-tempest) 4.x-dev |
-| Frontend  | [Svelte 5](https://svelte.dev) + [Inertia.js](https://inertiajs.com)         |
-| Language  | PHP 8.5+                                                                     |
-| Build     | Vite + Tailwind CSS v4 + vite-plugin-tempest                                 |
-| Database  | PostgreSQL, MySQL, or SQLite                                                 |
+| Layer     | Technology                                                                |
+|-----------|---------------------------------------------------------------------------|
+| Framework | [Tempest PHP](https://tempestphp.com) 3.x+                                |
+| Bridge    | [inertia-tempest](https://github.com/Maarten-Dekker/inertia-tempest) 4.x+ |
+| Frontend  | [Svelte 5](https://svelte.dev) + [Inertia.js](https://inertiajs.com)      |
+| Language  | PHP 8.5+                                                                  |
+| Build     | Vite + Tailwind CSS v4 + vite-plugin-tempest                              |
+| Database  | PostgreSQL, or MySQL, or SQLite (default)                                 |
 
 ---
 
@@ -77,7 +77,7 @@ A starter kit for [Tempest PHP](https://tempestphp.com) using Inertia and Svelte
 
 - PHP 8.5+
 - Composer
-- PostgreSQL, MySQL or SQLite
+- PostgreSQL, MySQL or SQLite (default)
 - Node.js + Bun (or NPM, or PNPM, or Yarn, or whatever you like to use)
 - Mailpit (or similar) for emails
 
